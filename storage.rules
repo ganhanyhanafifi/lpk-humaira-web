@@ -1,0 +1,17 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Registration document uploads - public can upload, never read/delete
+    match /pendaftaran/{allPaths=**} {
+      allow write: if 
+        request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/jpeg|image/jpg|image/png|application/pdf');
+      allow read: if false;
+    }
+    
+    // Deny everything else
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

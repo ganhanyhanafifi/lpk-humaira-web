@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Filter for crisp black text outline -->
+    <filter id="outline">
+      <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2"/>
+      <feFlood flood-color="#000000" flood-opacity="1" result="PINK"/>
+      <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"/>
+      <feMerge>
+        <feMergeNode in="OUTLINE"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Left Red Globe Half with Black Outline & White Grid -->
+  <g id="globe-left">
+    <!-- Red Fill Base -->
+    <path d="M 238,20 A 220,220 0 0,0 238,460 Z" fill="#C80000" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+    
+    <!-- White Grid Lines -->
+    <path d="M 120,70 Q 200,105 238,105" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" />
+    <path d="M 28,240 Q 170,240 238,240" fill="none" stroke="#FFFFFF" stroke-width="8" />
+    <path d="M 120,410 Q 200,375 238,375" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" />
+    
+    <path d="M 238,20 A 220,220 0 0,0 238,460" fill="none" stroke="#FFFFFF" stroke-width="8" />
+    <path d="M 238,20 A 130,220 0 0,0 238,460" fill="none" stroke="#FFFFFF" stroke-width="8" />
+    <path d="M 238,20 A 60,220 0 0,0 238,460" fill="none" stroke="#FFFFFF" stroke-width="8" />
+    
+    <!-- Center Vertical Divider Line -->
+    <line x1="238" y1="20" x2="238" y2="460" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+  </g>
+
+  <!-- Top Right Slices (3 Wedges with Thick Black Outlines) -->
+  <g id="top-right-wedges" fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-linejoin="round">
+    <path d="M 252,20 A 220,220 0 0,1 325,50 L 252,230 Z" />
+    <path d="M 333,56 A 220,220 0 0,1 398,122 L 252,230 Z" />
+    <path d="M 404,130 A 220,220 0 0,1 428,230 L 252,230 Z" />
+  </g>
+
+  <!-- Bottom Right Text: Humaira Akira Institute -->
+  <g id="text-brand" fill="#111827" font-family="'Times New Roman', Georgia, serif">
+    <text x="250" y="285" font-size="52" font-weight="bold" letter-spacing="-0.5">Humaira</text>
+    <text x="250" y="348" font-size="56" font-weight="bold" letter-spacing="-0.5">Akira</text>
+    <text x="250" y="410" font-size="52" font-weight="bold" letter-spacing="-0.5">Institute</text>
+  </g>
+</svg>

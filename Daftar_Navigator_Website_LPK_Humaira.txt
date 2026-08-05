@@ -1,0 +1,85 @@
+====================================================================
+  DAFTAR SELURUH NAVIGATOR & STRUKTUR MENU WEBSITE LPK HUMAIRA INSTITUTE
+====================================================================
+
+Website URL Local: http://localhost:3000/
+Status Semua Link: 100% AKTIF, DAPAT DIAKSES, & TIDAK ADA LINK ERRROR/BLANK.
+
+--------------------------------------------------------------------
+1. MENU PROFILE ( /profile )
+--------------------------------------------------------------------
+  • Company Profile                 -> /profile/company
+  • Izin S.O (Sending Org)          -> /profile/company/izin-so
+  • Our Team                        -> /profile/company/our-team
+  • Lokasi Pendidikan & Pelatihan   -> /profile/company/lokasi
+  • Alamat Kantor Pusat             -> /profile/company/alamat
+
+--------------------------------------------------------------------
+2. MENU INFORMASI ( /informasi )
+--------------------------------------------------------------------
+  • Bidang Kerja                    -> /informasi/bidang-kerja
+  • Biaya Program                   -> /informasi/biaya/rincian
+  • Metode Pembayaran               -> /informasi/biaya/metode
+  • Program Alumni                  -> /informasi/alumni/program
+  • Testimoni Alumni                -> /informasi/alumni/testimoni
+  • Fasilitas Pelatihan             -> /informasi/fasilitas/pelatihan
+  • Fasilitas Asrama                -> /informasi/fasilitas/asrama
+  • Persyaratan Dokumen             -> /informasi/dokumen/persyaratan
+  • Sertifikat yang Diperoleh       -> /informasi/dokumen/sertifikat
+  • Magang vs Tokutei Ginou         -> /informasi/perbedaan/magang-vs-tokugi
+  • Biaya Hidup di Jepang           -> /informasi/biaya-hidup-jepang
+  • Nihongo Gakkou                  -> /informasi/nihongo-gakkou
+  • Parttime Job                    -> /informasi/parttime-job
+  • Lowongan Kerja                  -> /informasi/lowongan-kerja
+  • Tokutei Ginou                   -> /informasi/tokutei-ginou
+  • Kerja di Jepang                 -> /informasi/kerja-di-jepang
+  • Syarat Beasiswa Kerja di Jepang -> /informasi/syarat-beasiswa
+  • Prosedur Ujian Bahasa Jepang    -> /informasi/prosedur-ujian
+
+--------------------------------------------------------------------
+3. MENU PROGRAM ( /program )
+--------------------------------------------------------------------
+  • Program Intensif                -> /program/jepang/intensif
+  • Full Dana Talangan              -> /program/jepang/full-dana-talangan
+  • Persiapan Ujian                 -> /program/jepang/persiapan-ujian
+  • Kelas Kaiwa                     -> /program/jepang/kelas-kaiwa
+  • Driver (Logistik)               -> /program/jepang/driver-logistik
+  • Matching Job                    -> /program/jepang/matching-job
+  • Nihongo Gakkou                  -> /program/jepang/nihongo-gakkou
+  • Free Trial Online Class         -> /program/jepang/free-trial
+
+--------------------------------------------------------------------
+4. MENU UJIAN ( /ujian )
+--------------------------------------------------------------------
+  • JLPT                            -> /ujian/jlpt
+  • JFT                             -> /ujian/jft
+  • NatTest                         -> /ujian/nattest
+  • JTest                           -> /ujian/jtest
+  • SSW                             -> /ujian/ssw
+
+--------------------------------------------------------------------
+5. MENU KARIR & KERJA SAMA ( /karir )
+--------------------------------------------------------------------
+  • Team Recruitment                -> /karir/recruitment
+  • Daftar Mitra                    -> /karir/mitra
+  • Kerjasama dengan Sekolah        -> /karir/kerjasama/sekolah
+  • Kerjasama dengan Perusahaan     -> /karir/kerjasama/perusahaan
+
+--------------------------------------------------------------------
+6. MENU DIRECT & TOMBOL UTAMA
+--------------------------------------------------------------------
+  • Kelas Intensif                  -> /kelas-intensif
+  • DAFTAR SEKARANG DISINI!         -> /pendaftaran (Form Pendaftaran)
+  • Sukses Pendaftaran              -> /pendaftaran/sukses (Konfirmasi)
+
+====================================================================
+PANDUAN EDIT & UPDATE KODINGAN:
+====================================================================
+1. Untuk Mengubah / Menambah Struktur Menu Navigasi:
+   File: src/config/navigationData.js
+
+2. Untuk Mengubah / Mengedit Isi Teks / Artikel Setiap Halaman:
+   File: src/config/pagesContent.js
+
+Semua file dibuat terstruktur dan aman dari error.
+====================================================================
