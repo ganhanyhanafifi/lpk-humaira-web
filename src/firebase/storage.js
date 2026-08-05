@@ -63,7 +63,6 @@ export const uploadFile = (file, path, onProgress) => {
  * Cloudinary free tier deletion is managed via dashboard or signed API.
  */
 export const deleteFile = async (path) => {
-  console.log('Delete file called for path:', path);
   return Promise.resolve();
 };
 

@@ -1,88 +1,76 @@
-# LPK Humaira Institute - Registration Portal
+# LPK Humaira Institute — Official Website & Registration System
 
-## Description
-This project is the main registration portal and website for LPK Humaira Institute. It includes a frontend built with React + Vite, and a backend powered by Firebase Services (Firestore, Storage, and Cloud Functions). It features real-time notifications via a Telegram Bot whenever a new student registers.
+Website resmi dan sistem pendaftaran calon mahasiswa/peserta pelatihan **LPK Humaira Institute** (Sending Organization resmi Kemenaker RI untuk program pelatihan dan penyaluran kerja ke Jepang).
 
-## Tech Stack
-- **Frontend:** React 18, Vite
-- **Backend:** Firebase (Cloud Functions v2, Firestore, Storage, Hosting)
-- **Notifications:** Telegram Bot API
-- **Language:** JavaScript/Node.js (Backend)
+---
 
-## Prerequisites
-- Node.js 18+
-- Firebase CLI installed globally (`npm install -g firebase-tools`)
-- A Telegram Bot token (from BotFather) and a Chat ID.
+## 🚀 Teknologi Yang Digunakan
 
-## Installation Steps
-1. **Clone the repository:**
-   ```bash
-   git clone <repository_url>
-   cd "WebHai"
-   ```
-2. **Install frontend dependencies:**
-   ```bash
-   npm install
-   ```
-3. **Set up Environment Variables:**
-   Copy `.env.example` to `.env` and fill in your Firebase configuration values.
-4. **Install backend dependencies:**
-   ```bash
-   cd functions
-   npm install
-   ```
-5. **Start Development Server:**
-   ```bash
-   # Go back to project root
-   cd ..
-   npm run dev
-   ```
+- **Frontend Core**: React 18, Vite 5, React Router DOM v6
+- **Styling & UI**: Tailwind CSS, Headless UI, Heroicons v2
+- **Database & Backend**: Firebase Firestore (Spark 100% Free Plan)
+- **Media & Document Storage**: Cloudinary Direct Unsigned API (25GB Free Storage)
+- **Notifikasi Pendaftaran**: Telegram Bot API (`@lpk_humaira_notif_bot`)
 
-## Firebase Setup
-1. Go to [Firebase Console](https://console.firebase.google.com/) and create a project (`lpk-humaira-institute`).
-2. Enable **Firestore**, **Storage**, and **Functions** (requires Blaze plan).
-3. Initialize firebase if needed, or simply ensure your `.firebaserc` points to your project.
-4. Run `firebase login` to authenticate the CLI.
+---
 
-## Telegram Bot Setup
-1. Message **@BotFather** on Telegram.
-2. Send `/newbot` and follow the prompts to get your **Bot Token**.
-3. Create a group, add your bot, and send a message.
-4. Use `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates` to find your **Chat ID**.
+## 📁 Struktur Folder Project (`/src`)
 
-## Setting Cloud Function Secrets
-We use Firebase Secrets Management for sensitive keys instead of hardcoding them.
-Run the following commands and paste your values when prompted:
-```bash
-firebase functions:secrets:set TELEGRAM_BOT_TOKEN
-firebase functions:secrets:set TELEGRAM_CHAT_ID
+```
+src/
+├── assets/
+│   ├── hero/                 # Gambar slideshow background hero (hero-1.jpg .. hero-5.jpg)
+│   ├── images/               # Logo brand, hero-banner.jpg, hero-fasilitas.jpg, favicon
+│   └── icons/                # Icon sosial media (icon-ig.png, icon-fb.png, icon-tiktok.png)
+├── components/
+│   ├── common/               # Komponen UI Reusable Kecil (FormInput, FileUpload, WarningBox, dll)
+│   ├── layout/               # Komponen Structural Layout (Layout, Navbar, Footer, MegaMenu, MobileMenu)
+│   └── sections/             # Komponen Section Halaman (HeroSection, HeroBackgroundSlider, StepTimeline, dll)
+├── config/                   # Data Statis Navigasi & Dictionary Halaman (navigationData.js, pagesContent.js)
+├── firebase/                 # Integrasi Services (config.js, firestore.js, storage.js)
+├── hooks/                    # Custom React Hooks (useRegistrationForm.js)
+├── utils/                    # Utility & Validator (validators.js)
+├── pages/                    # Route Halaman Utama (Home.jsx, Pendaftaran.jsx, SuksesPendaftaran.jsx, GenericPage.jsx)
+└── styles/                   # Stylesheet Global (index.css)
 ```
 
-## Deploying
-To deploy the whole stack to Firebase:
-1. **Build Frontend:**
+---
+
+## 🛠️ Cara Menginstall & Menjalankan di Lokal
+
+1. **Clone repository ini**:
+   ```bash
+   git clone <repository-url>
+   cd WebHai
+   ```
+
+2. **Install seluruh dependensi**:
+   ```bash
+   npm install
+   ```
+
+3. **Konfigurasi Environment Variables (`.env`)**:
+   Salin `.env.example` menjadi `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+   Isi credentials Firebase, Cloudinary, dan Telegram Bot Token Anda.
+
+4. **Jalankan Development Server**:
+   ```bash
+   npm run dev
+   ```
+   Buka browser di `http://localhost:3000/`.
+
+5. **Build Production Bundle**:
    ```bash
    npm run build
    ```
-2. **Deploy Hosting:**
-   ```bash
-   firebase deploy --only hosting
-   ```
-3. **Deploy Functions:**
-   ```bash
-   firebase deploy --only functions
-   ```
-4. **Deploy Rules:**
-   ```bash
-   firebase deploy --only firestore:rules,storage
-   ```
 
-*(Alternatively, run `firebase deploy` to deploy everything at once).*
+---
 
-## Security Notes
-- **Firestore:** Only public creation is allowed for new registrations. Reading, updating, and deleting are blocked.
-- **Storage:** Only file uploads (Images/PDFs) under 5MB are permitted in the `/pendaftaran/` path.
-- **Secrets:** Do not expose `TELEGRAM_BOT_TOKEN` in frontend code. It is safely secured in Cloud Functions.
+## 🔒 Fitur Keamanan & Performa
 
-## License
-MIT License.
+- **No Credit Card Required**: Integrasi Cloudinary direct upload & Telegram Bot API bekerja 100% pada free tier tanpa memerlukan Firebase Blaze plan.
+- **Strict Firestore Rules**: Aturan keamanan `firestore.rules` membatasi akses publik hanya untuk tindakan `create` pada formulir pendaftaran.
+- **Crossfade & Slide Animation**: Hero background slider dilengkapi dengan preloading gambar & penanganan memori bebas kebocoran (*memory-leak free*).

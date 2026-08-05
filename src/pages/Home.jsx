@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroSection from '../components/HeroSection';
-import TestimonialCard from '../components/TestimonialCard';
+import HeroSection from '../components/sections/HeroSection';
+import TestimonialCard from '../components/common/TestimonialCard';
 import { Link } from 'react-router-dom';
 import { 
   CheckBadgeIcon, 

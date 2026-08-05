@@ -1,8 +1,8 @@
 import React from 'react';
-import FormInput from '../components/FormInput';
-import FileUpload from '../components/FileUpload';
-import WarningBox from '../components/WarningBox';
-import StepTimeline from '../components/StepTimeline';
+import FormInput from '../components/common/FormInput';
+import FileUpload from '../components/common/FileUpload';
+import WarningBox from '../components/common/WarningBox';
+import StepTimeline from '../components/sections/StepTimeline';
 import { useRegistrationForm } from '../hooks/useRegistrationForm';
 import { getHeightOptions, getAgeOptions } from '../utils/validators';
 

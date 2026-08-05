@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
+import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import GenericPage from './pages/GenericPage';
 import Pendaftaran from './pages/Pendaftaran';
 import SuksesPendaftaran from './pages/SuksesPendaftaran';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/common/ScrollToTop';
 
 export default function App() {
   return (

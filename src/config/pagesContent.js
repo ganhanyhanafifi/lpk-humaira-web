@@ -1,17 +1,156 @@
 export const pagesContent = {
+  // Parent & Overview Routes
+  '/profile': {
+    title: 'Profil LPK Humaira Institute',
+    metaDescription: 'Profil dan Legalitas Lembaga Pelatihan Kerja LPK Humaira Institute',
+    heroTitle: 'Profil LPK Humaira Institute',
+    heroSubtitle: 'Lembaga Pelatihan Kerja Resmi Kemenaker untuk Karir di Jepang',
+    sections: [
+      {
+        title: 'Tentang Kami',
+        content: '<p>LPK Humaira Institute adalah Lembaga Pelatihan Kerja (LPK) dan Sending Organization (S.O) resmi yang terdaftar di Kementerian Ketenagakerjaan RI. Kami berfokus pada persiapan bahasa dan keterampilan kerja calon pekerja migran Indonesia menuju Jepang.</p>'
+      },
+      {
+        title: 'Menu Profil',
+        content: '<p>Silakan telusuri informasi profil kami melalui submenu: <strong>Company Profile</strong>, <strong>Izin S.O</strong>, <strong>Our Team</strong>, dan <strong>Lokasi Pendidikan</strong>.</p>'
+      }
+    ]
+  },
+  '/informasi': {
+    title: 'Pusat Informasi LPK Humaira',
+    metaDescription: 'Informasi Lengkap Program Karir, Biaya, Fasilitas, dan Dokumen Kerja Jepang',
+    heroTitle: 'Informasi & Informasi Karir',
+    heroSubtitle: 'Panduan Lengkap Menuju Karir Sukses di Jepang',
+    sections: [
+      {
+        title: 'Informasi Utama',
+        content: '<p>Di halaman ini kakak dapat menemukan informasi lengkap mengenai <strong>Bidang Kerja</strong>, <strong>Rincian Biaya</strong>, <strong>Fasilitas Asrama</strong>, <strong>Persyaratan Dokumen</strong>, hingga <strong>Lowongan Kerja Terbaru</strong> di Jepang.</p>'
+      }
+    ]
+  },
+  '/informasi/biaya': {
+    title: 'Informasi Biaya Program',
+    metaDescription: 'Rincian Biaya dan Metode Pembayaran Program Pelatihan LPK Humaira',
+    heroTitle: 'Biaya Program Pelatihan',
+    heroSubtitle: 'Transparan, Terjangkau, & Tersedia Skema Dana Talangan',
+    sections: [
+      {
+        title: 'Skema Biaya',
+        content: '<p>Kami menawarkan rincian biaya yang transparan tanpa biaya tersembunyi. Tersedia pula pilihan sistem pembayaran bertahap dan skema dana talangan bagi calon peserta yang membutuhkan.</p>'
+      }
+    ]
+  },
+  '/informasi/alumni': {
+    title: 'Khusus Alumni',
+    metaDescription: 'Informasi Komunitas dan Program Alumni LPK Humaira di Jepang',
+    heroTitle: 'Komunitas Alumni LPK Humaira',
+    heroSubtitle: 'Jejaring Alumni yang Terhubung di Berbagai Kota Jepang',
+    sections: [
+      {
+        title: 'Program Alumni',
+        content: '<p>Alumni LPK Humaira tersebar di Tokyo, Osaka, Nagoya, Yokohama, dan berbagai wilayah di Jepang. Kami terus memantau dan memberikan bimbingan hingga kepulangan ke Indonesia.</p>'
+      }
+    ]
+  },
+  '/informasi/fasilitas': {
+    title: 'Fasilitas LPK Humaira',
+    metaDescription: 'Fasilitas Kelas Pelatihan dan Asrama Modern LPK Humaira',
+    heroTitle: 'Fasilitas Pendidikan & Asrama',
+    heroSubtitle: 'Lingkungan Belajar Kondusif & Fasilitas Asrama Lengkap',
+    sections: [
+      {
+        title: 'Fasilitas Utama',
+        content: '<p>Kami menyediakan fasilitas ruang kelas ber-AC, laboratorium bahasa, area simulasi praktek, serta asrama peserta pelatihan yang bersih, aman, dan nyaman.</p>'
+      }
+    ]
+  },
+  '/informasi/dokumen': {
+    title: 'Dokumen & Sertifikat',
+    metaDescription: 'Persyaratan Dokumen & Sertifikasi Program Kerja di Jepang',
+    heroTitle: 'Persyaratan Dokumen & Sertifikasi',
+    heroSubtitle: 'Pendampingan Pengurusan Berkas Resmi',
+    sections: [
+      {
+        title: 'Ketentuan Dokumen',
+        content: '<p>Setiap calon peserta diwajibkan menyiapkan 5 dokumen utama: KTP, Akta Kelahiran, Kartu Keluarga (KK), Ijazah Terakhir, dan Surat Izin Orang Tua/Pasangan.</p>'
+      }
+    ]
+  },
+  '/informasi/perbedaan': {
+    title: 'Perbedaan Program',
+    metaDescription: 'Perbedaan Magang Kerja (Ginou Jisshusei) vs Tokutei Ginou (SSW)',
+    heroTitle: 'Perbandingan Program Kerja',
+    heroSubtitle: 'Pahami Pilihan Program yang Sesuai dengan Kualifikasi Anda',
+    sections: [
+      {
+        title: 'Magang vs Tokutei Ginou',
+        content: '<p><strong>Magang Kerja (Ginou Jisshusei)</strong> berfokus pada transfer keterampilan selama 3-5 tahun, sedangkan <strong>Tokutei Ginou (SSW)</strong> adalah visa pekerja berketerampilan spesifik dengan standar gaji pekerja lokal Jepang.</p>'
+      }
+    ]
+  },
+  '/program': {
+    title: 'Program Pelatihan Kerja Jepang',
+    metaDescription: 'Daftar Lengkap Program Pelatihan Kerja & Bahasa Jepang LPK Humaira',
+    heroTitle: 'Program Unggulan LPK Humaira',
+    heroSubtitle: 'Persiapan Terstruktur Dari Nol Hingga Berangkat ke Jepang',
+    sections: [
+      {
+        title: 'Pilihan Program',
+        content: '<p>Temukan program yang tepat: <strong>Program Intensif N5-N3</strong>, <strong>Tokutei Ginou (SSW)</strong>, <strong>Matching Job Perusahaan</strong>, <strong>Kelas Kaiwa Percakapan</strong>, hingga <strong>Free Trial Class</strong>.</p>'
+      }
+    ]
+  },
+  '/ujian': {
+    title: 'Informasi Ujian Kemampuan',
+    metaDescription: 'Persiapan Ujian Kemampuan Bahasa Jepang JLPT, JFT-Basic, NAT-Test, & SSW',
+    heroTitle: 'Panduan Ujian Kemampuan',
+    heroSubtitle: 'Bimbingan Soal & Kelulusan Ujian JLPT, JFT, & Skill Test SSW',
+    sections: [
+      {
+        title: 'Jenis Ujian',
+        content: '<p>Untuk dapat bekerja di Jepang, peserta umumnya wajib lulus ujian sertifikasi bahasa seperti <strong>JLPT N4/N3</strong>, <strong>JFT-Basic A2</strong>, atau <strong>NAT-TEST</strong>, serta Ujian Keterampilan Spesifik (SSW Skill Test).</p>'
+      }
+    ]
+  },
+  '/karir': {
+    title: 'Karir & Kerja Sama',
+    metaDescription: 'Peluang Karir dan Kemitraan Strategis LPK Humaira Institute',
+    heroTitle: 'Karir & Kemitraan Strategis',
+    heroSubtitle: 'Membangun Masa Depan Bersama Mitra Perusahaan & Sekolah',
+    sections: [
+      {
+        title: 'Peluang Kerjasama',
+        content: '<p>Kami membuka peluang kerjasama dengan sekolah (SMK/SMA), perguruan tinggi, serta perusahaan mitra di Jepang maupun Indonesia untuk penyaluran tenaga kerja terampil.</p>'
+      }
+    ]
+  },
+  '/karir/kerjasama': {
+    title: 'Kerjasama Program',
+    metaDescription: 'Kemitraan Program Pelatihan Kerja Sama Sekolah & Perusahaan',
+    heroTitle: 'Kerjasama Program Vokasi & Penyaluran',
+    heroSubtitle: 'Sinergi Pendidikan Vokasi dan Dunia Industri Jepang',
+    sections: [
+      {
+        title: 'Bentuk Kerjasama',
+        content: '<p>LPK Humaira siap menyelenggarakan kelas khusus atau program penyaluran alumni lulusan sekolah & perusahaan mitra menuju industri di Jepang.</p>'
+      }
+    ]
+  },
+
+  // Specific Sub-Routes
   '/profile/company': {
     title: 'Company Profile',
     metaDescription: 'Company Profile LPK Humaira Institute',
     heroTitle: 'Tentang LPK Humaira Institute',
-    heroSubtitle: 'Lembaga Pelatihan Kerja Terpercaya untuk Menuju Jepang & Jerman',
+    heroSubtitle: 'Lembaga Pelatihan Kerja Terpercaya untuk Menuju Jepang',
     sections: [
       {
         title: 'Visi Kami',
-        content: '<p>Menjadi lembaga pelatihan kerja terbaik di Indonesia yang mampu menghasilkan sumber daya manusia profesional, mandiri, dan berdaya saing global untuk memenuhi kebutuhan tenaga kerja di Jepang dan Jerman.</p><p>Kami berkomitmen untuk terus meningkatkan kualitas pendidikan dan pelatihan sesuai dengan standar internasional.</p>'
+        content: '<p>Menjadi lembaga pelatihan kerja terbaik di Indonesia yang mampu menghasilkan sumber daya manusia profesional, mandiri, dan berdaya saing global untuk memenuhi kebutuhan tenaga kerja berkualitas di Jepang.</p><p>Kami berkomitmen untuk terus meningkatkan kualitas pendidikan dan pelatihan sesuai dengan standar internasional.</p>'
       },
       {
         title: 'Misi Kami',
-        content: '<p>1. Menyelenggarakan program pelatihan bahasa dan keterampilan kerja yang berkualitas.<br/>2. Membangun kerjasama yang kuat dengan berbagai perusahaan dan institusi di negara tujuan.<br/>3. Memberikan pelayanan dan pendampingan terbaik bagi setiap siswa sejak pendaftaran hingga penempatan kerja.</p>'
+        content: '<p>1. Menyelenggarakan program pelatihan bahasa dan keterampilan kerja yang berkualitas.<br/>2. Membangun kerjasama yang kuat dengan berbagai perusahaan dan institusi penerima di Jepang.<br/>3. Memberikan pelayanan dan pendampingan terbaik bagi setiap siswa sejak pendaftaran hingga penempatan kerja.</p>'
       }
     ]
   },
@@ -35,7 +174,7 @@ export const pagesContent = {
     sections: [
       {
         title: 'Instruktur Berdedikasi',
-        content: '<p>Tim pengajar kami terdiri dari penutur asli (native speaker) dan tenaga pengajar lokal yang telah memiliki sertifikasi dan pengalaman tinggal serta bekerja di Jepang atau Jerman.</p><p>Mereka tidak hanya mengajarkan bahasa, tetapi juga budaya dan etos kerja, sehingga siswa benar-benar siap menghadapi kehidupan dan lingkungan kerja di negara tujuan.</p>'
+        content: '<p>Tim pengajar kami terdiri dari penutur asli (native speaker) dan tenaga pengajar lokal yang telah memiliki sertifikasi dan pengalaman tinggal serta bekerja di Jepang.</p><p>Mereka tidak hanya mengajarkan bahasa, tetapi juga budaya dan etos kerja, sehingga siswa benar-benar siap menghadapi kehidupan dan lingkungan kerja di negara tujuan.</p>'
       }
     ]
   },
@@ -58,500 +197,447 @@ export const pagesContent = {
     heroSubtitle: 'Kunjungi Kami untuk Informasi Lebih Lanjut',
     sections: [
       {
-        title: 'Hubungi Kami',
-        content: '<p>Kantor pusat LPK Humaira Institute terbuka untuk kunjungan dan konsultasi setiap hari kerja dari pukul 08:00 hingga 17:00 WIB.</p><p>Silakan datang langsung atau hubungi layanan pelanggan kami melalui telepon dan email yang tersedia di halaman kontak.</p>'
+        title: 'Alamat Lengkap',
+        content: '<p>Jl. Tanwiriyyah, Sindanglaka, Kec. Karangtengah, Kabupaten Cianjur, Jawa Barat 43281.</p><p>Jam Operasional: Senin - Jumat (08:00 - 17:00 WIB), Sabtu (08:00 - 15:00 WIB).</p>'
       }
     ]
   },
   '/informasi/bidang-kerja': {
     title: 'Bidang Kerja',
-    metaDescription: 'Informasi Bidang Pekerjaan di Jepang',
-    heroTitle: 'Bidang Pekerjaan',
-    heroSubtitle: 'Pilihan Karir Beragam di Negara Maju',
+    metaDescription: 'Daftar Sektor Pekerjaan di Jepang',
+    heroTitle: 'Pilihan Sektor Pekerjaan',
+    heroSubtitle: 'Peluang Karir di Berbagai Industri Berkembang',
     sections: [
       {
-        title: 'Sektor Tersedia',
-        content: '<p>Kami menawarkan berbagai bidang pekerjaan melalui program Tokutei Ginou (Specified Skilled Worker) maupun program Magang, mulai dari manufaktur, konstruksi, pertanian, hingga keperawatan (caregiver).</p><p>Setiap bidang kerja memiliki persyaratan keterampilan khusus yang akan kami bantu persiapkan melalui program pelatihan intensif.</p>'
+        title: 'Sektor Utama di Jepang',
+        content: '<p>Kami menyediakan jalur pelatihan dan penyaluran untuk berbagai sektor industri utama di Jepang, antara lain:</p><ul><li>• Pengolahan Makanan & Minuman (Food Processing)</li><li>• Keperawatan & Perawat Lansia (Kaigo / Caregiver)</li><li>• Manufaktur & Industri Mesin</li><li>• Konstruksi & Infrastruktur</li><li>• Logistik & Pengemudi (Driver)</li><li>• Pertanian & Perikanan</li></ul>'
       }
     ]
   },
   '/informasi/biaya/rincian': {
     title: 'Rincian Biaya Program',
-    metaDescription: 'Rincian Biaya Pelatihan',
+    metaDescription: 'Rincian Komponen Biaya Pelatihan LPK Humaira',
     heroTitle: 'Rincian Biaya Pelatihan',
-    heroSubtitle: 'Transparansi Biaya untuk Masa Depan Anda',
+    heroSubtitle: 'Investasi Masa Depan yang Transparan',
     sections: [
       {
-        title: 'Transparansi Biaya',
-        content: '<p>LPK Humaira Institute berkomitmen memberikan rincian biaya yang transparan dan terjangkau untuk semua program. Biaya mencakup pendaftaran, modul pelatihan, seragam, dan ujian sertifikasi.</p><p>Kami memastikan tidak ada biaya tersembunyi, sehingga siswa dan orang tua dapat merencanakan keuangan dengan baik.</p>'
+        title: 'Komponen Biaya',
+        content: '<p>Biaya program mencakup: biaya pendaftaran, materi pembelajaran/buku paket, fasilitas asrama & listrik/air, seragam pelatihan, sertifikasi ujian bahasa, hingga pendampingan pengurusan visa resmi.</p><p>Tidak ada biaya tersembunyi di luar rincian yang disepakati.</p>'
       }
     ]
   },
   '/informasi/biaya/metode': {
     title: 'Metode Pembayaran',
-    metaDescription: 'Cara Pembayaran Program Pelatihan',
-    heroTitle: 'Metode Pembayaran Fleksibel',
-    heroSubtitle: 'Kemudahan Bertransaksi',
+    metaDescription: 'Pilihan Pembayaran Biaya Pelatihan',
+    heroTitle: 'Metode & Skema Pembayaran',
+    heroSubtitle: 'Kemudahan Pembayaran Bertahap',
     sections: [
       {
-        title: 'Opsi Pembayaran',
-        content: '<p>Kami menyediakan berbagai opsi pembayaran yang memudahkan calon siswa, baik pembayaran penuh maupun skema cicilan sesuai kesepakatan.</p><p>Pembayaran dapat dilakukan melalui transfer bank ke rekening resmi LPK Humaira Institute.</p>'
+        title: 'Pilihan Skema Pembayaran',
+        content: '<p>1. Pembayaran Lunas (Cash/Transfer Bank).<br/>2. Pembayaran Bertahap/Cicilan (DP diawal, sisanya diangsur selama masa pelatihan).<br/>3. Skema Dana Talangan (Mitra Lembaga Keuangan Resmi).</p>'
       }
     ]
   },
   '/informasi/alumni/program': {
-    title: 'Program Khusus Alumni',
-    metaDescription: 'Program Lanjutan bagi Alumni LPK Humaira',
-    heroTitle: 'Program Alumni LPK Humaira',
-    heroSubtitle: 'Dukungan Berkelanjutan bagi Kesuksesan Karir',
+    title: 'Program Alumni',
+    metaDescription: 'Program Pendampingan Alumni LPK Humaira',
+    heroTitle: 'Pendampingan & Pengembangan Alumni',
+    heroSubtitle: 'Dukungan Berkelanjutan Setelah Berangkat',
     sections: [
       {
-        title: 'Pembinaan Karir',
-        content: '<p>Kami menyediakan program pembinaan karir dan jaringan alumni yang kuat bagi para lulusan yang telah selesai magang atau bekerja di luar negeri.</p><p>Alumni akan dibantu untuk menyalurkan pengalaman mereka ke perusahaan di Indonesia atau melanjutkan pendidikan dan karir ke jenjang yang lebih tinggi.</p>'
+        title: 'Monitoring Alumni',
+        content: '<p>Kami secara berkala melakukan pemantauan kondisi kerja dan tempat tinggal alumni di Jepang untuk memastikan hak-hak mereka terpenuhi sesuai kontrak kerja resmi.</p>'
       }
     ]
   },
   '/informasi/alumni/testimoni': {
     title: 'Testimoni Alumni',
-    metaDescription: 'Kisah Sukses Alumni LPK Humaira',
+    metaDescription: 'Kisah Pengalaman Alumni LPK Humaira di Jepang',
     heroTitle: 'Kisah Sukses Alumni',
-    heroSubtitle: 'Inspirasi dari Mereka yang Telah Berhasil',
+    heroSubtitle: 'Inspirasi Perjalanan Karir dari Para Lulusan',
     sections: [
       {
-        title: 'Cerita Inspiratif',
-        content: '<p>Banyak alumni kami yang telah sukses berkarir di Jepang dan Jerman, meningkatkan taraf hidup mereka, dan membawa pengalaman berharga ke tanah air.</p><p>Simak kisah inspiratif mereka tentang bagaimana pendidikan dan kedisiplinan di LPK Humaira membantu meraih impian mereka di kancah internasional.</p>'
+        title: 'Pengalaman Nyata Alumni',
+        content: '<p>Banyak alumni kami yang telah sukses berkarir di Jepang, meningkatkan taraf hidup keluarga, dan meraih masa depan cerah.</p><p>Simak kisah inspiratif mereka tentang bagaimana bimbingan di LPK Humaira membantu mewujudkan impian bekerja di kancah internasional.</p>'
       }
     ]
   },
   '/informasi/fasilitas/pelatihan': {
     title: 'Fasilitas Pelatihan',
-    metaDescription: 'Fasilitas Kelas dan Praktik',
-    heroTitle: 'Fasilitas Pelatihan Modern',
-    heroSubtitle: 'Lingkungan Belajar yang Optimal',
+    metaDescription: 'Sarana & Prasarana Belajar LPK Humaira',
+    heroTitle: 'Sarana Pelatihan Modern',
+    heroSubtitle: 'Mendukung Pembelajaran Bahasa & Praktik Kerja',
     sections: [
       {
-        title: 'Ruang Kelas & Laboratorium',
-        content: '<p>Kami memiliki fasilitas pelatihan yang lengkap, termasuk ruang kelas multimedia, area diskusi kelompok, dan simulasi alat kerja sesuai bidang industri.</p><p>Semua ini dirancang untuk memastikan siswa tidak hanya menguasai teori, tetapi juga terbiasa dengan lingkungan praktik kerja yang sebenarnya.</p>'
+        title: 'Fasilitas Ruang Kelas',
+        content: '<p>Ruang kelas ber-AC dengan proyektor multimedia, peraga praktik fisik, alat bantu percakapan interaktif, serta akses jaringan Wi-Fi cepat di seluruh area kampus.</p>'
       }
     ]
   },
   '/informasi/fasilitas/asrama': {
     title: 'Fasilitas Asrama',
-    metaDescription: 'Fasilitas Asrama Siswa LPK Humaira',
-    heroTitle: 'Asrama Siswa',
-    heroSubtitle: 'Kenyamanan dan Kedisiplinan Sepanjang Hari',
+    metaDescription: 'Fasilitas Asrama Peserta Pelatihan',
+    heroTitle: 'Asrama Peserta Nyaman',
+    heroSubtitle: 'Hunian Sehat untuk Mendukung Kedisiplinan Siswa',
     sections: [
       {
-        title: 'Hunian yang Nyaman',
-        content: '<p>Bagi siswa yang berasal dari luar daerah, kami menyediakan fasilitas asrama yang aman, bersih, dan nyaman. Asrama dilengkapi dengan tempat tidur, lemari, ruang makan bersama, dan area ibadah.</p><p>Tinggal di asrama juga melatih kedisiplinan dan kebiasaan hidup mandiri ala budaya Jepang yang sangat penting sebelum pemberangkatan.</p>'
+        title: 'Ketentuan Asrama',
+        content: '<p>Asrama putra dan putri terpisah, dilengkapi tempat tidur mandiri, lemari pakaian, dapur bersama, fasilitas ibadah, serta pengawasan keamanan 24 jam.</p>'
       }
     ]
   },
   '/informasi/dokumen/persyaratan': {
     title: 'Persyaratan Dokumen',
-    metaDescription: 'Syarat Dokumen Pendaftaran',
-    heroTitle: 'Persyaratan Dokumen Pendaftaran',
-    heroSubtitle: 'Lengkapi Berkas Anda dengan Benar',
+    metaDescription: 'Daftar Dokumen Syarat Pendaftaran LPK Humaira',
+    heroTitle: 'Daftar Berkas Persyaratan',
+    heroSubtitle: 'Siapkan Berkas Asli dan Fotokopi Anda',
     sections: [
       {
-        title: 'Daftar Dokumen',
-        content: '<p>Calon siswa diwajibkan untuk menyiapkan dokumen asli dan fotokopi berupa KTP, Kartu Keluarga (KK), Akta Kelahiran, Ijazah terakhir, serta surat izin dari orang tua/wali.</p><p>Pastikan semua dokumen lengkap dan sah secara hukum untuk memperlancar proses pendaftaran dan pengurusan visa nantinya.</p>'
+        title: '5 Dokumen Wajib',
+        content: '<p>1. KTP Calon Peserta<br/>2. Akta Kelahiran<br/>3. Kartu Keluarga (KK)<br/>4. Ijazah SMA/SMK Sederajat<br/>5. Surat Izin Orang Tua/Pasangan bermaterai</p>'
       }
     ]
   },
   '/informasi/dokumen/sertifikat': {
     title: 'Sertifikat yang Diperoleh',
-    metaDescription: 'Sertifikasi dari Program Pelatihan',
-    heroTitle: 'Sertifikasi Resmi',
-    heroSubtitle: 'Pengakuan Kompetensi Anda',
+    metaDescription: 'Sertifikasi Lulusan LPK Humaira Institute',
+    heroTitle: 'Sertifikasi Resmi Lulusan',
+    heroSubtitle: 'Bukti Kualifikasi yang Diakui Perusahaan Jepang',
     sections: [
       {
-        title: 'Bukti Kompetensi',
-        content: '<p>Setelah menyelesaikan program, siswa akan mendapatkan sertifikat pelatihan bahasa dan keterampilan dari LPK Humaira Institute yang diakui secara nasional maupun oleh mitra kami di luar negeri.</p><p>Sertifikat ini menjadi nilai tambah yang sangat berharga dalam proses seleksi wawancara kerja.</p>'
+        title: 'Sertifikat Lulusan',
+        content: '<p>Setiap siswa yang menyelesaikan pelatihan akan memperoleh Sertifikat Kelulusan LPK Humaira, Sertifikat Kemampuan Bahasa (JLPT/JFT), serta Sertifikat Skill Test SSW (bagi jalur Tokutei Ginou).</p>'
       }
     ]
   },
   '/informasi/perbedaan/magang-vs-tokugi': {
     title: 'Magang vs Tokutei Ginou',
-    metaDescription: 'Perbedaan Program Magang dan SSW (Tokutei Ginou)',
-    heroTitle: 'Magang vs Tokutei Ginou (SSW)',
-    heroSubtitle: 'Pilih Program Sesuai Tujuan Anda',
+    metaDescription: 'Perbandingan Jalur Magang Kerja dan Tokutei Ginou (SSW)',
+    heroTitle: 'Perbandingan: Magang vs Tokutei Ginou',
+    heroSubtitle: 'Pilih Jalur Karir di Jepang yang Paling Sesuai',
     sections: [
       {
-        title: 'Kenali Perbedaannya',
-        content: '<p>Program Magang (Ginou Jisshusei) berfokus pada transfer pengetahuan teknis dan keterampilan dari Jepang ke Indonesia, umumnya berdurasi 3 tahun. Peserta dididik sebagai trainee.</p><p>Sementara itu, Tokutei Ginou (Specified Skilled Worker) adalah visa kerja nyata bagi mereka yang telah memiliki keahlian dan sertifikasi bahasa tertentu, memberikan hak gaji dan status pekerja profesional hingga 5 tahun.</p>'
-      }
-    ]
-  },
-  '/informasi/perbedaan/jepang-vs-jerman': {
-    title: 'Jepang vs Jerman',
-    metaDescription: 'Perbedaan Kerja di Jepang dan Ausbildung Jerman',
-    heroTitle: 'Peluang Karir: Jepang vs Jerman',
-    heroSubtitle: 'Bandingkan Peluang Dua Negara Maju',
-    sections: [
-      {
-        title: 'Karakteristik Pekerjaan',
-        content: '<p>Kerja di Jepang sangat mengedepankan etos kerja keras, kedisiplinan, dan harmoni (Ho-Ren-So) dengan peluang di berbagai sektor industri melalui SSW atau magang.</p><p>Di sisi lain, program Ausbildung di Jerman memberikan sistem pendidikan vokasi ganda, di mana peserta belajar teori di sekolah sekaligus magang praktis di perusahaan dengan kontrak yang terjamin dan hak sosial yang setara dengan warga lokal.</p>'
+        title: 'Perbedaan Utama',
+        content: '<p><strong>Program Magang (Ginou Jisshusei)</strong> bertujuan untuk alih teknologi dan keterampilan selama 3-5 tahun. Persyaratan bahasa relatif lebih awal (N5-N4).</p><p><strong>Program Tokutei Ginou (SSW)</strong> adalah jalur pekerja terampil dengan standar gaji setara warga Jepang, fasilitas pindah perusahaan, dan batas kontrak hingga 5 tahun. Syarat bahasa minimal N4/JFT-Basic A2 + lulus Skill Test SSW.</p>'
       }
     ]
   },
   '/informasi/biaya-hidup-jepang': {
     title: 'Biaya Hidup di Jepang',
-    metaDescription: 'Estimasi Biaya Hidup di Jepang',
-    heroTitle: 'Estimasi Biaya Hidup di Jepang',
-    heroSubtitle: 'Perencanaan Finansial Saat Tinggal di Jepang',
+    metaDescription: 'Estimasi Biaya Hidup Pekerja di Jepang',
+    heroTitle: 'Gambaran Biaya Hidup di Jepang',
+    heroSubtitle: 'Perencanaan Keuangan Calon Pekerja Migran',
     sections: [
       {
-        title: 'Rincian Pengeluaran',
-        content: '<p>Biaya hidup di Jepang sangat bervariasi tergantung pada wilayah tempat tinggal. Rata-rata biaya hidup per bulan mencakup apartemen (yachin), listrik, air, gas, biaya makan, asuransi, dan transportasi.</p><p>Dengan gaji yang kompetitif dari program Tokutei Ginou atau Magang, peserta umumnya masih bisa menabung dalam jumlah yang signifikan jika menerapkan gaya hidup hemat.</p>'
+        title: 'Rincian Pengeluaran Bulanan',
+        content: '<p>Rata-rata pengeluaran bulanan di Jepang (sewa apartemen, konsumsi, transportasi, asuransi) berkisar antara 60.000 - 90.000 Yen per bulan. Dengan penghasilan rata-rata 170.000 - 230.000 Yen, peserta tetap dapat menabung dalam jumlah yang signifikan setiap bulannya.</p>'
       }
     ]
   },
   '/informasi/nihongo-gakkou': {
     title: 'Nihongo Gakkou',
-    metaDescription: 'Sekolah Bahasa Jepang (Nihongo Gakkou)',
-    heroTitle: 'Sekolah Bahasa Jepang (Nihongo Gakkou)',
-    heroSubtitle: 'Pintu Gerbang Menuju Pendidikan Tinggi dan Karir di Jepang',
+    metaDescription: 'Informasi Sekolah Bahasa Jepang (Nihongo Gakkou)',
+    heroTitle: 'Program Sekolah Bahasa di Jepang',
+    heroSubtitle: 'Jalur Studi & Kerja di Negeri Sakura',
     sections: [
       {
-        title: 'Mengenal Nihongo Gakkou',
-        content: '<p>Nihongo Gakkou adalah sekolah bahasa intensif di Jepang bagi warga asing yang ingin menguasai bahasa Jepang level akademik atau profesional. Lulusan Nihongo Gakkou memiliki peluang besar untuk melanjutkan ke Universitas atau Senmon Gakkou (Sekolah Vokasi) di Jepang.</p><p>LPK Humaira bekerja sama dengan berbagai Nihongo Gakkou terbaik untuk membantu siswa meraih impian melanjutkan studi.</p>'
+        title: 'Tentang Nihongo Gakkou',
+        content: '<p>Jalur Nihongo Gakkou memungkinkan siswa belajar di sekolah bahasa Jepang selama 1-2 tahun sekaligus bekerja paruh waktu (arubaito) hingga 28 jam per minggu secara resmi.</p>'
       }
     ]
   },
   '/informasi/parttime-job': {
-    title: 'Parttime Job',
-    metaDescription: 'Informasi Kerja Paruh Waktu (Arubaito) di Jepang',
-    heroTitle: 'Kerja Paruh Waktu (Arubaito)',
-    heroSubtitle: 'Mencari Pengalaman Sekaligus Penghasilan Tambahan',
+    title: 'Parttime Job (Arubaito)',
+    metaDescription: 'Aturan Kerja Paruh Waktu di Jepang bagi Siswa',
+    heroTitle: 'Informasi Part-time Job (Arubaito)',
+    heroSubtitle: 'Peluang Kerja Tambahan Bagi Pelajar',
     sections: [
       {
-        title: 'Aturan Arubaito',
-        content: '<p>Siswa internasional (seperti pemegang visa pelajar untuk Nihongo Gakkou) diizinkan bekerja paruh waktu (arubaito) hingga 28 jam per minggu selama masa sekolah, dan bisa lebih banyak saat libur panjang.</p><p>Kerja paruh waktu ini sangat membantu untuk menutupi biaya hidup sehari-hari, sambil memperlancar kemampuan bahasa Jepang dalam situasi nyata.</p>'
+        title: 'Ketentuan Arubaito',
+        content: '<p>Siswa sekolah bahasa berhak bekerja paruh waktu maksimal 28 jam per minggu saat periode belajar dan hingga 40 jam per minggu saat libur semester, dengan upah standar per jam sesuai wilayah Jepang (800 - 1.200 Yen/jam).</p>'
       }
     ]
   },
   '/informasi/lowongan-kerja': {
-    title: 'Lowongan Kerja',
-    metaDescription: 'Informasi Lowongan Kerja Terkini',
-    heroTitle: 'Lowongan Kerja Tersedia',
-    heroSubtitle: 'Update Peluang Kerja dari Mitra Kami',
+    title: 'Lowongan Kerja Terbaru',
+    metaDescription: 'Lowongan Kerja Jepang Terbaru di LPK Humaira',
+    heroTitle: 'Informasi Lowongan Kerja Jepang',
+    heroSubtitle: 'Update Kebutuhan Tenaga Kerja Dari Perusahaan Penerima',
     sections: [
       {
-        title: 'Peluang Terkini',
-        content: '<p>Kami secara rutin memperbarui daftar lowongan kerja dari mitra perusahaan di Jepang untuk program Magang maupun Tokutei Ginou. Posisi yang sering tersedia antara lain pengolahan makanan, konstruksi, perawat lansia, dan pertanian.</p><p>Calon siswa yang memenuhi kualifikasi bahasa dan keterampilan dapat langsung mengikuti proses seleksi wawancara.</p>'
+        title: 'Job Opening Aktif',
+        content: '<p>Kami terus mengupdate lowongan matching job bulanan di sektor pengolahan makanan, caregiver (nursing care), driver logistik, manufaktur, dan konstruksi untuk lokasi Tokyo, Osaka, Kyoto, Nagoya, dan Fukuoka.</p>'
       }
     ]
   },
   '/informasi/tokutei-ginou': {
-    title: 'Tokutei Ginou',
-    metaDescription: 'Informasi Specified Skilled Worker (SSW)',
-    heroTitle: 'Tokutei Ginou (SSW)',
-    heroSubtitle: 'Program Pekerja Berketerampilan Spesifik',
+    title: 'Tokutei Ginou (SSW)',
+    metaDescription: 'Penjelasan Lengkap Program Tokutei Ginou SSW',
+    heroTitle: 'Program Tokutei Ginou (Specified Skilled Worker)',
+    heroSubtitle: 'Jalur Kerja Profesional dengan Gaji Standar Pekerja Jepang',
     sections: [
       {
-        title: 'Apa itu Tokutei Ginou?',
-        content: '<p>Tokutei Ginou atau Specified Skilled Worker (SSW) adalah status visa kerja baru di Jepang yang dirancang untuk mengatasi kekurangan tenaga kerja. Peserta menerima gaji setara orang Jepang dan tunjangan lainnya.</p><p>Untuk mendaftar, calon pekerja harus lulus ujian kemampuan bahasa Jepang (JFT-Basic atau JLPT N4) dan ujian keterampilan bidang khusus (SSW Test).</p>'
+        title: 'Keunggulan Tokutei Ginou',
+        content: '<p>Tokutei Ginou memberikan visa kerja resmi dengan durasi kontrak hingga 5 tahun. Peserta memiliki kesempatan menerima bonus bulanan, pensiun, dan kesempatan alih status ke SSW Type 2 untuk membawa keluarga.</p>'
       }
     ]
   },
   '/informasi/kerja-di-jepang': {
     title: 'Kerja di Jepang',
-    metaDescription: 'Panduan Bekerja di Jepang',
-    heroTitle: 'Panduan Kerja di Jepang',
-    heroSubtitle: 'Kultur, Aturan, dan Lingkungan Kerja',
+    metaDescription: 'Panduan Lengkap Bekerja di Jepang Secara Resmi',
+    heroTitle: 'Panduan Resmi Kerja di Jepang',
+    heroSubtitle: 'Langkah Aman & Terpercaya Membangun Karir Internasional',
     sections: [
       {
-        title: 'Budaya Kerja',
-        content: '<p>Bekerja di Jepang membutuhkan adaptasi terhadap budaya kerja yang sangat disiplin, tepat waktu, dan mengutamakan kerja sama tim. Sistem hierarki (senpai-kohai) masih cukup kental di banyak perusahaan.</p><p>Memahami dan mematuhi aturan perusahaan serta norma sosial lokal sangat penting untuk sukses dan kenyamanan hidup di Jepang.</p>'
+        title: 'Keamanan & Proteksi',
+        content: '<p>Melalui LPK Humaira yang berstatus Sending Organization resmi, seluruh proses pemberangkatan terlindungi oleh perlindungan hukum Kemenaker dan perwakilan KBRI di Jepang.</p>'
       }
     ]
   },
   '/informasi/syarat-beasiswa': {
-    title: 'Syarat Beasiswa Kerja',
-    metaDescription: 'Informasi Beasiswa Pelatihan Kerja ke Jepang',
-    heroTitle: 'Beasiswa Pelatihan Kerja',
-    heroSubtitle: 'Peluang Pelatihan Gratis Bagi Siswa Berprestasi',
+    title: 'Syarat Beasiswa Kerja di Jepang',
+    metaDescription: 'Persyaratan Program Beasiswa Sekolah & Kerja Jepang',
+    heroTitle: 'Persyaratan Beasiswa Kerja',
+    heroSubtitle: 'Peluang Bantuan Biaya Pendidikan dari Sponsor Jepang',
     sections: [
       {
-        title: 'Syarat dan Ketentuan',
-        content: '<p>LPK Humaira sesekali menyediakan program beasiswa atau dana talangan untuk meringankan beban biaya pelatihan bagi siswa yang memiliki potensi tinggi namun terkendala finansial.</p><p>Persyaratan meliputi seleksi nilai akademik, tes wawancara, kondisi fisik prima, dan komitmen kuat untuk menyelesaikan kontrak kerja di Jepang.</p>'
-      }
-    ]
-  },
-  '/informasi/syarat-ausbildung': {
-    title: 'Syarat Ausbildung Jerman',
-    metaDescription: 'Persyaratan Program Ausbildung di Jerman',
-    heroTitle: 'Persyaratan Ausbildung Jerman',
-    heroSubtitle: 'Persiapkan Diri Menuju Pendidikan Vokasi Jerman',
-    sections: [
-      {
-        title: 'Kualifikasi Utama',
-        content: '<p>Untuk mengikuti program Ausbildung di Jerman, peserta umumnya diwajibkan memiliki ijazah minimal SMA/SMK sederajat dan sertifikat bahasa Jerman minimal level B1 (Goethe-Zertifikat).</p><p>Usia pendaftaran biasanya antara 18 hingga 30 tahun. Calon peserta juga harus lulus wawancara dengan perusahaan tempat mereka akan menjalankan Ausbildung.</p>'
+        title: 'Kriteria Penerima Beasiswa',
+        content: '<p>Program beasiswa diberikan kepada calon siswa berprestasi yang lulus seleksi akademik, wawancara motivasi, dan berkomitmen menyelesaikan kontrak kerja pasca lulus sekolah bahasa.</p>'
       }
     ]
   },
   '/informasi/prosedur-ujian': {
-    title: 'Prosedur Ujian Bahasa',
-    metaDescription: 'Prosedur Ujian JLPT, JFT, dll',
+    title: 'Prosedur Ujian Kemampuan',
+    metaDescription: 'Tata Cara & Prosedur Pendaftaran Ujian JLPT & JFT',
     heroTitle: 'Prosedur Ujian Kemampuan Bahasa',
-    heroSubtitle: 'Cara Mendaftar dan Mengikuti Ujian Resmi',
+    heroSubtitle: 'Langkah Pendaftaran & Jadwal Ujian Resmi',
     sections: [
       {
-        title: 'Panduan Ujian',
-        content: '<p>Kami memberikan pendampingan penuh dalam proses pendaftaran ujian kemampuan bahasa Jepang seperti JLPT, JFT-Basic, NAT-TEST, maupun J-Test, termasuk simulasi dan try-out sebelum hari H.</p><p>Ujian-ujian ini merupakan prasyarat mutlak yang harus dipenuhi peserta untuk mendapatkan visa kerja atau studi ke Jepang.</p>'
+        title: 'Alur Pendaftaran Ujian',
+        content: '<p>Ujian JFT-Basic diselenggarakan berbasis komputer (CBT) hampir setiap bulan, sedangkan JLPT diadakan 2 kali setahun (Juli dan Desember). Tim LPK Humaira mendampingi proses pendaftaran akun hingga pencetakan kartu ujian.</p>'
       }
     ]
   },
+
+  // Program Routes
   '/program/jepang/intensif': {
-    title: 'Kelas Bahasa Jepang Intensif',
-    metaDescription: 'Program Kelas Bahasa Jepang Intensif',
-    heroTitle: 'Kelas Intensif Bahasa Jepang',
-    heroSubtitle: 'Fokus, Cepat, dan Tepat Sasaran',
+    title: 'Program Intensif Bahasa Jepang',
+    metaDescription: 'Kelas Intensif Bahasa Jepang N5-N3',
+    heroTitle: 'Program Intensif Bahasa Jepang',
+    heroSubtitle: 'Persiapan Dari Dasar Hingga Siap Kerja & Wawancara',
     sections: [
       {
-        title: 'Deskripsi Program',
-        content: '<p>Program ini dirancang khusus bagi mereka yang ingin menguasai bahasa Jepang dasar (setara N5 dan N4) dalam waktu singkat, biasanya 3 hingga 6 bulan. Siswa akan belajar setiap hari kerja secara intensif.</p><p>Kurikulum difokuskan pada penguasaan tata bahasa, kosakata, huruf (Hiragana, Katakana, Kanji dasar), serta percakapan sehari-hari.</p>'
+        title: 'Kurikulum Pembelajaran',
+        content: '<p>Pelatihan dilakukan secara tatap muka (offline) di asrama selama 3-6 bulan. Materi mencakup pola kalimat (bunpou), kosakata (tango), percakapan (kaiwa), kanji dasar, serta simulasi wawancara kerja (mensetsu).</p>'
       }
     ]
   },
   '/program/jepang/full-dana-talangan': {
-    title: 'Program Full Dana Talangan',
-    metaDescription: 'Program Berangkat ke Jepang dengan Dana Talangan',
+    title: 'Full Dana Talangan',
+    metaDescription: 'Program Pelatihan dengan Skema Full Dana Talangan',
     heroTitle: 'Program Full Dana Talangan',
-    heroSubtitle: 'Solusi Berangkat Tanpa Beban Biaya di Awal',
+    heroSubtitle: 'Berangkat Dulu, Bayar Setelah Bekerja di Jepang',
     sections: [
       {
-        title: 'Kemudahan Finansial',
-        content: '<p>Bekerja sama dengan lembaga keuangan resmi, kami menawarkan program Full Dana Talangan di mana seluruh biaya pendidikan, dokumen, tiket, hingga pemberangkatan akan ditalangi terlebih dahulu.</p><p>Siswa dapat mencicil pengembalian dana tersebut melalui pemotongan gaji setelah resmi mulai bekerja di Jepang.</p>'
+        title: 'Ketentuan Dana Talangan',
+        content: '<p>Skema ini membantu calon siswa yang terkendala biaya awal. Seluruh biaya pelatihan dan pengurusan berkas ditalangi terlebih dahulu dan dipotong dari gaji secara bertahap setelah siswa resmi bekerja di Jepang.</p>'
       }
     ]
   },
   '/program/jepang/persiapan-ujian': {
-    title: 'Kelas Persiapan Ujian',
-    metaDescription: 'Kelas Khusus Persiapan Ujian JLPT / JFT / SSW',
-    heroTitle: 'Kelas Persiapan Ujian',
-    heroSubtitle: 'Lulus Ujian Resmi dengan Nilai Memuaskan',
+    title: 'Persiapan Ujian JLPT / JFT',
+    metaDescription: 'Kelas Drilling Soal Ujian JLPT & JFT-Basic A2',
+    heroTitle: 'Kelas Persiapan Ujian Sertifikasi',
+    heroSubtitle: 'Drilling Soal Latihan & Garansi Bimbingan Sampai Lulus',
     sections: [
       {
-        title: 'Fokus pada Kelulusan',
-        content: '<p>Kelas ini dirancang bagi siswa yang telah memiliki dasar bahasa Jepang dan ingin fokus mempersiapkan diri menghadapi JLPT, JFT-Basic, atau ujian keterampilan SSW.</p><p>Materi kelas banyak diisi dengan pembahasan soal, simulasi try-out waktu nyata (real-time), serta strategi menjawab soal ujian dengan cepat dan akurat.</p>'
+        title: 'Metode Pengajaran',
+        content: '<p>Fokus pada pembahasan ribuan bank soal JLPT/JFT tahun-tahun sebelumnya, trik menjawab cepat, listening (choukai), serta tryout mingguan berstandar asli.</p>'
       }
     ]
   },
   '/program/jepang/kelas-kaiwa': {
-    title: 'Kelas Kaiwa (Percakapan)',
-    metaDescription: 'Kelas Praktik Percakapan Bahasa Jepang',
-    heroTitle: 'Kelas Percakapan (Kaiwa)',
-    heroSubtitle: 'Berbicara Bahasa Jepang dengan Percaya Diri',
+    title: 'Kelas Kaiwa & Percakapan',
+    metaDescription: 'Kelas Percakapan Bahasa Jepang Intensif',
+    heroTitle: 'Kelas Intensif Percakapan (Kaiwa)',
+    heroSubtitle: 'Latih Keberanian Bicara Langsung dengan Penutur Asli',
     sections: [
       {
-        title: 'Latihan Komunikasi',
-        content: '<p>Banyak pembelajar bahasa Jepang jago dalam teori namun kurang percaya diri saat berbicara. Kelas Kaiwa difokuskan 100% pada praktik berbicara (speaking) dan mendengar (listening).</p><p>Bersama instruktur berpengalaman, siswa diajak berdiskusi, bermain peran (role-play), dan berlatih percakapan santai maupun formal ala lingkungan kerja Jepang.</p>'
+        title: 'Fokus Pelatihan Kaiwa',
+        content: '<p>Melatih kefasihan lafal (hatsuon), percakapan sehari-hari di dunia kerja Jepang, kesopanan (keigo), serta kebiasaan komunikasi Ho-Ren-So di tempat kerja.</p>'
       }
     ]
   },
   '/program/jepang/driver-logistik': {
-    title: 'Program Driver Logistik (Jepang)',
-    metaDescription: 'Peluang Kerja Driver Logistik di Jepang',
-    heroTitle: 'Program Driver & Logistik',
-    heroSubtitle: 'Penuhi Kebutuhan Sektor Distribusi Jepang',
+    title: 'Program Driver & Logistik',
+    metaDescription: 'Pelatihan Kerja Sektor Pengemudi Logistik di Jepang',
+    heroTitle: 'Program Khusus Driver Logistik',
+    heroSubtitle: 'Peluang Karir Pengemudi Armada Logistik di Jepang',
     sections: [
       {
-        title: 'Karir di Sektor Logistik',
-        content: '<p>Jepang sedang membutuhkan banyak tenaga kerja di sektor logistik dan transportasi, termasuk pengemudi truk dan staf pergudangan. Program ini mempersiapkan peserta secara spesifik untuk bidang tersebut.</p><p>Pelatihan mencakup kosakata khusus logistik, standar keselamatan kerja, dan persiapan lisensi mengemudi di Jepang jika diperlukan.</p>'
+        title: 'Persyaratan Khusus Driver',
+        content: '<p>Peserta wajib memiliki SIM A/B umum di Indonesia, lulus sertifikasi bahasa N4/JFT-Basic A2, serta mengonversi SIM ke lisensi mengemudi resmi Jepang saat tiba di lokasi kerja.</p>'
       }
     ]
   },
   '/program/jepang/matching-job': {
-    title: 'Layanan Matching Job',
-    metaDescription: 'Proses Wawancara dan Penempatan Kerja',
-    heroTitle: 'Matching Job',
-    heroSubtitle: 'Menjembatani Anda dengan Perusahaan Jepang',
+    title: 'Matching Job Perusahaan',
+    metaDescription: 'Pencocokan Kerja Langsung dengan User Jepang',
+    heroTitle: 'Program Matching Job',
+    heroSubtitle: 'Wawancara Langsung dengan User Perusahaan Jepang',
     sections: [
       {
-        title: 'Proses Seleksi',
-        content: '<p>Melalui program Matching Job, kami mempertemukan kandidat yang telah siap (lulus N4/JFT dan skill test) dengan perusahaan pencari kerja di Jepang untuk sesi wawancara (mensetsu).</p><p>Kami akan mendampingi peserta dalam mempersiapkan CV (Rirekisho) bahasa Jepang serta melatih etika dan tata krama saat wawancara.</p>'
+        title: 'Proses Matching Job',
+        content: '<p>Siswa yang telah memenuhi kualifikasi bahasa akan dijadwalkan wawancara online (interview) langsung dengan pihak pimpinan perusahaan Jepang dengan pendampingan tim penerjemah LPK Humaira.</p>'
       }
     ]
   },
   '/program/jepang/nihongo-gakkou': {
-    title: 'Program Sekolah Bahasa di Jepang',
-    metaDescription: 'Program Pendaftaran Nihongo Gakkou',
-    heroTitle: 'Program Sekolah Bahasa (Nihongo Gakkou)',
-    heroSubtitle: 'Studi Langsung ke Jepang',
+    title: 'Nihongo Gakkou',
+    metaDescription: 'Program Sekolah Bahasa Jepang Terakreditasi',
+    heroTitle: 'Jalur Sekolah Bahasa Jepang',
+    heroSubtitle: 'Pendidikan Bahasa & Kerja Paruh Waktu Resmi',
     sections: [
       {
-        title: 'Layanan Pendidikan',
-        content: '<p>Bagi yang ingin langsung belajar ke Jepang, LPK Humaira menyediakan layanan pengurusan pendaftaran ke berbagai Nihongo Gakkou terpilih. Kami membantu dari pengurusan dokumen awal, CoE, hingga visa pelajar.</p><p>Program ini sangat cocok bagi mereka yang menargetkan kuliah Universitas atau mencari pekerjaan profesional setingkat sarjana di Jepang nantinya.</p>'
+        title: 'Layanan Pengurusan',
+        content: '<p>Pendampingan seleksi berkas COE (Certificate of Eligibility), pendaftaran ke sekolah bahasa rujukan di Tokyo/Osaka, dan jaminan tempat tinggal serta pekerjaan part-time saat tiba di Jepang.</p>'
       }
     ]
   },
   '/program/jepang/free-trial': {
     title: 'Free Trial Online Class',
-    metaDescription: 'Coba Gratis Kelas Bahasa Jepang Online',
+    metaDescription: 'Kelas Uji Coba Gratis Bahasa Jepang Online',
     heroTitle: 'Free Trial Online Class',
-    heroSubtitle: 'Rasakan Kualitas Pembelajaran Kami',
+    heroSubtitle: 'Coba Kelas Gratis Bahasa Jepang Dari Rumah',
     sections: [
       {
-        title: 'Coba Tanpa Risiko',
-        content: '<p>Masih ragu? Kami mengundang Anda untuk mengikuti kelas uji coba (free trial) secara online. Dalam sesi ini, Anda dapat merasakan langsung metode pengajaran interaktif dari instruktur kami.</p><p>Daftar sekarang melalui website untuk mendapatkan jadwal free trial terdekat!</p>'
+        title: 'Fasilitas Free Trial',
+        content: '<p>Ikuti 2 sesi kelas gratis pengenalan huruf Hiragana, Katakana, dan percakapan dasar Jepang dibimbing langsung oleh instruktur LPK Humaira secara online via Zoom.</p>'
       }
     ]
   },
-  '/program/jerman/ausbildung': {
-    title: 'Program Ausbildung (Jerman)',
-    metaDescription: 'Pendidikan Vokasi Ausbildung di Jerman',
-    heroTitle: 'Program Ausbildung Jerman',
-    heroSubtitle: 'Karir Internasional Melalui Sistem Vokasi Terbaik',
-    sections: [
-      {
-        title: 'Tentang Ausbildung',
-        content: '<p>Ausbildung adalah sistem pendidikan vokasi ganda khas Jerman, di mana siswa belajar teori di sekolah vokasi sekaligus bekerja sebagai peserta magang profesional di perusahaan. Peserta mendapat gaji selama masa Ausbildung (biasanya 3 tahun).</p><p>Program ini menjadi jalur favorit bagi pemuda internasional untuk membangun karir jangka panjang di Eropa.</p>'
-      }
-    ]
-  },
-  '/program/jerman/bahasa-jerman': {
-    title: 'Kelas Bahasa Jerman Intensif',
-    metaDescription: 'Kelas Persiapan Bahasa Jerman B1',
-    heroTitle: 'Kelas Bahasa Jerman',
-    heroSubtitle: 'Penguasaan Bahasa Hingga Level B1/B2',
-    sections: [
-      {
-        title: 'Persiapan Bahasa',
-        content: '<p>Kemampuan bahasa Jerman adalah kunci utama kelulusan program Ausbildung. Kami menyelenggarakan kelas intensif bahasa Jerman dari tingkat dasar (A1) hingga tingkat menengah (B1/B2).</p><p>Pengajaran dipandu oleh instruktur tersertifikasi Goethe-Institut dan difokuskan pada penguasaan tata bahasa, kosakata, serta ujian sertifikasi resmi Goethe.</p>'
-      }
-    ]
-  },
-  '/program/jerman/persiapan-dokumen': {
-    title: 'Persiapan Dokumen Ausbildung',
-    metaDescription: 'Pendampingan Pengurusan Dokumen Jerman',
-    heroTitle: 'Pengurusan Dokumen & Visa',
-    heroSubtitle: 'Bebas Repot untuk Keberangkatan Anda',
-    sections: [
-      {
-        title: 'Pendampingan Menyeluruh',
-        content: '<p>Tim kami akan membantu mengurus seluruh kelengkapan administrasi Anda menuju Jerman, mulai dari penerjemahan ijazah oleh penerjemah tersumpah, legalisasi dokumen, hingga pengurusan visa Ausbildung.</p><p>Kami memastikan dokumen Anda memenuhi standar birokrasi Jerman yang ketat agar tidak ada hambatan saat proses aplikasi.</p>'
-      }
-    ]
-  },
+
+  // Ujian Routes
   '/ujian/jlpt': {
-    title: 'JLPT (Japanese-Language Proficiency Test)',
-    metaDescription: 'Informasi Ujian JLPT',
-    heroTitle: 'JLPT (Nouryokushiken)',
-    heroSubtitle: 'Sertifikasi Bahasa Jepang Standar Global',
+    title: 'Ujian JLPT (Japanese-Language Proficiency Test)',
+    metaDescription: 'Informasi & Pendaftaran Ujian JLPT N5-N1',
+    heroTitle: 'Ujian Sertifikasi JLPT',
+    heroSubtitle: 'Sertifikat Standar Internasional Bahasa Jepang',
     sections: [
       {
-        title: 'Informasi Ujian',
-        content: '<p>JLPT adalah ujian kemampuan bahasa Jepang paling diakui di dunia, diselenggarakan dua kali setahun (Juli dan Desember). Terdiri dari 5 level, dari N5 (dasar) hingga N1 (fasih / tingkat lanjut).</p><p>Kelulusan N4 umumnya menjadi syarat minimal untuk mengikuti program Tokutei Ginou atau Magang yang lebih spesifik.</p>'
+        title: 'Tentang JLPT',
+        content: '<p>JLPT adalah ujian sertifikasi kemampuan bahasa Jepang paling diakui di dunia. Terdiri dari 5 tingkatan (N5 paling dasar hingga N1 paling mahir). Syarat kelulusan kerja di Jepang umumnya minimal tingkatan N4 atau N3.</p>'
       }
     ]
   },
   '/ujian/jft': {
-    title: 'JFT-Basic',
-    metaDescription: 'Informasi Ujian JFT-Basic',
-    heroTitle: 'JFT-Basic',
-    heroSubtitle: 'Ujian Dasar Bahasa Jepang untuk Pekerja',
+    title: 'Ujian JFT-Basic (Japan Foundation Test)',
+    metaDescription: 'Informasi Ujian Komputer JFT-Basic A2',
+    heroTitle: 'Ujian JFT-Basic A2',
+    heroSubtitle: 'Ujian Berbasis Komputer Utama untuk Tokutei Ginou',
     sections: [
       {
-        title: 'Informasi Ujian',
-        content: '<p>Japan Foundation Test for Basic Japanese (JFT-Basic) dirancang khusus untuk mengukur kemampuan komunikasi bahasa Jepang dasar dalam kehidupan sehari-hari bagi warga asing yang akan bekerja di Jepang (khususnya visa SSW).</p><p>Ujian ini diadakan berbasis komputer (CBT) secara rutin setiap beberapa bulan, sehingga peserta tidak perlu menunggu lama seperti JLPT.</p>'
+        title: 'Keunggulan JFT-Basic',
+        content: '<p>JFT-Basic diselenggarakan dengan sistem Computer-Based Testing (CBT). Hasil kelulusan dapat langsung diketahui secara instan begitu tes selesai dilaksanakan.</p>'
       }
     ]
   },
   '/ujian/nattest': {
-    title: 'NAT-TEST',
-    metaDescription: 'Informasi Ujian NAT-TEST',
-    heroTitle: 'NAT-TEST',
-    heroSubtitle: 'Alternatif Ujian Kompetensi Bahasa Jepang',
+    title: 'Ujian NAT-TEST',
+    metaDescription: 'Informasi & Jadwal Ujian NAT-TEST',
+    heroTitle: 'Ujian Kemampuan NAT-TEST',
+    heroSubtitle: 'Ujian Evaluasi Bahasa Jepang dengan Frekuensi Rutin',
     sections: [
       {
-        title: 'Informasi Ujian',
-        content: '<p>NAT-TEST adalah ujian kemampuan bahasa Jepang yang struktur dan tingkat kesulitannya mirip dengan JLPT, namun diselenggarakan lebih sering (enam kali dalam setahun).</p><p>Ujian ini sering digunakan sebagai tolak ukur dan syarat administrasi pendaftaran Nihongo Gakkou atau prasyarat tertentu sebelum mendapatkan jadwal ujian JLPT.</p>'
+        title: 'Jadwal Ujian NAT-TEST',
+        content: '<p>NAT-TEST diselenggarakan 6 kali dalam setahun (setiap 2 bulan sekali), menjadi alternatif terbaik bagi siswa yang membutuhkan sertifikat bahasa Jepang dalam waktu cepat.</p>'
       }
     ]
   },
   '/ujian/jtest': {
-    title: 'J-Test',
-    metaDescription: 'Informasi Ujian J-Test',
-    heroTitle: 'J-Test',
-    heroSubtitle: 'Ujian Praktis Kemampuan Bahasa Jepang',
+    title: 'Ujian J.TEST',
+    metaDescription: 'Informasi & Pelaksanaan Ujian J.TEST',
+    heroTitle: 'Ujian Kepraktisan Bahasa J.TEST',
+    heroSubtitle: 'Ujian Uji Kemampuan Bahasa Jepang Praktis',
     sections: [
       {
-        title: 'Informasi Ujian',
-        content: '<p>J-Test (Test of Practical Japanese) mengevaluasi kemampuan bahasa Jepang secara lebih terperinci dan praktis dengan sistem penilaian poin (skor), bukan sekadar lulus/tidak lulus per level seperti JLPT.</p><p>J-Test sangat dihargai oleh banyak perusahaan Jepang karena dianggap mampu merefleksikan kemampuan komunikasi pelamar yang sesungguhnya di tempat kerja.</p>'
+        title: 'Karakteristik J.TEST',
+        content: '<p>J.TEST mengukur kemampuan komunikasi praktis di dunia bisnis dan kehidupan sehari-hari dengan bobot penilaian listening yang tinggi.</p>'
       }
     ]
   },
   '/ujian/ssw': {
-    title: 'Ujian SSW (Skill Test)',
-    metaDescription: 'Informasi Ujian Keterampilan SSW Tokutei Ginou',
-    heroTitle: 'Ujian Keterampilan Tokutei Ginou (SSW)',
-    heroSubtitle: 'Uji Kompetensi Bidang Kerja Spesifik',
+    title: 'Ujian Keterampilan SSW (Skill Test)',
+    metaDescription: 'Informasi Ujian Keterampilan Spesifik Tokutei Ginou SSW',
+    heroTitle: 'Ujian Keterampilan Spesifik (SSW)',
+    heroSubtitle: 'Sertifikasi Keahlian Bidang Kerja di Jepang',
     sections: [
       {
-        title: 'Informasi Ujian',
-        content: '<p>Selain bahasa Jepang, kandidat visa Tokutei Ginou (SSW) wajib lulus ujian keterampilan sesuai bidang kerja yang dipilih (misal: Pertanian, Caregiver, Pengolahan Makanan, Konstruksi).</p><p>Ujian ini menguji pengetahuan teknis dasar dan prosedur keselamatan kerja dalam bahasa Jepang sesuai dengan panduan industri terkait.</p>'
+        title: 'Jenis Ujian SSW',
+        content: '<p>Ujian keahlian SSW diselenggarakan sesuai bidang industri yang diminati, seperti Ujian Pengolahan Makanan (Food Services/Food Processing), Ujian Keperawatan (Kaigo), dan Ujian Logistik/Konstruksi.</p>'
       }
     ]
   },
+
+  // Karir & Kerja Sama Routes
   '/karir/recruitment': {
     title: 'Team Recruitment',
-    metaDescription: 'Karir sebagai Instruktur atau Staf LPK Humaira',
-    heroTitle: 'Bergabung Bersama Tim LPK Humaira',
-    heroSubtitle: 'Berkarir di Lembaga Pelatihan Terdepan',
+    metaDescription: 'Lowongan Kerja Staf & Instruktur LPK Humaira',
+    heroTitle: 'Karir di LPK Humaira Institute',
+    heroSubtitle: 'Bergabung Menjadi Bagian Dari Tim Profesional Kami',
     sections: [
       {
-        title: 'Peluang Karir',
-        content: '<p>Kami selalu membuka pintu bagi individu yang berbakat, berdedikasi tinggi, dan berpengalaman untuk bergabung sebagai instruktur bahasa, staf pemasaran, maupun tenaga manajemen.</p><p>Bagi eks-magang Jepang (Eks-Kenshuusei) yang memiliki passion dalam mengajar, ini adalah kesempatan emas untuk membagikan pengalaman Anda kepada generasi berikutnya.</p>'
+        title: 'Posisi yang Dibuka',
+        content: '<p>Kami membuka kesempatan bagi Sensei / Instruktur Bahasa Jepang, Staf Administrasi, Staf Marketing & Counseling untuk bergabung mengembangkan pendidikan vokasi di Cianjur, Jawa Barat.</p>'
       }
     ]
   },
   '/karir/mitra': {
     title: 'Daftar Mitra',
-    metaDescription: 'Daftar Mitra Perusahaan Jepang dan Jerman',
-    heroTitle: 'Mitra Kami',
-    heroSubtitle: 'Jaringan Kerjasama Internasional yang Luas',
+    metaDescription: 'Daftar Perusahaan Penerima & Accepting Organization Jepang',
+    heroTitle: 'Mitra Kerja Sama Internasional',
+    heroSubtitle: 'Jaringan Kemitraan Luas di Berbagai Kota Jepang',
     sections: [
       {
-        title: 'Perusahaan Mitra',
-        content: '<p>LPK Humaira Institute bangga bekerja sama dengan ratusan perusahaan penerima (Accepting Organization) dan Kumiai (Koperasi Pengawas) di berbagai wilayah di Jepang dan Jerman.</p><p>Kemitraan strategis ini menjamin ketersediaan lowongan kerja berkualitas dan perlindungan optimal bagi para siswa lulusan kami.</p>'
+        title: 'Mitra Perusahaan Jepang',
+        content: '<p>LPK Humaira Institute bekerja sama dengan puluhan perusahaan penerima (Accepting Organization) dan Kumiai (Koperasi Pengawas) terpercaya di Tokyo, Osaka, Nagoya, Yokohama, Kobe, dan Fukuoka.</p>'
       }
     ]
   },
   '/karir/kerjasama/sekolah': {
-    title: 'Kerjasama Sekolah',
-    metaDescription: 'Program Kerjasama LPK Humaira dengan SMK/SMA',
-    heroTitle: 'Kerjasama dengan Institusi Pendidikan',
-    heroSubtitle: 'Sinergi untuk Masa Depan Lulusan SMK/SMA',
+    title: 'Kerjasama dengan Sekolah (SMK/SMA)',
+    metaDescription: 'Program Kemitraan Penyaluran Lulusan Sekolah Ke Jepang',
+    heroTitle: 'Kerjasama Lembaga Pendidikan / Sekolah',
+    heroSubtitle: 'Membangun Jalur Karir Internasional Bagi Siswa SMK/SMA',
     sections: [
       {
-        title: 'Program BKK',
-        content: '<p>Kami mengundang SMK dan SMA di seluruh Indonesia untuk bermitra melalui Bursa Kerja Khusus (BKK). Kami dapat menyelenggarakan seminar karir, pelatihan bahasa ekstrakurikuler, hingga rekrutmen langsung ke sekolah.</p><p>Sinergi ini bertujuan membuka wawasan dan memberikan jalan tol bagi para lulusan baru menuju karir internasional.</p>'
+        title: 'Manfaat Kemitraan Sekolah',
+        content: '<p>Sekolah mitra akan memperoleh program sosialisasi karir Jepang gratis, kelas ekstrakurikuler bahasa Jepang, serta kuota khusus penyaluran kerja alumni sekolah ke Jepang.</p>'
       }
     ]
   },
   '/karir/kerjasama/perusahaan': {
-    title: 'Kerjasama Perusahaan',
-    metaDescription: 'Kemitraan dengan Perusahaan Pengguna Tenaga Kerja',
-    heroTitle: 'Kerjasama Perusahaan (B2B)',
-    heroSubtitle: 'Penuhi Kebutuhan Tenaga Kerja Profesional Anda',
+    title: 'Kerjasama dengan Perusahaan',
+    metaDescription: 'Kemitraan Pasokan Tenaga Kerja Terampil Bagi Perusahaan',
+    heroTitle: 'Kemitraan Industri & Perusahaan',
+    heroSubtitle: 'Solusi Penyediaan Sumber Daya Manusia Berdaya Saing',
     sections: [
       {
-        title: 'Penyediaan Tenaga Kerja',
-        content: '<p>Bagi perusahaan di Indonesia, Jepang, maupun Jerman yang membutuhkan pasokan tenaga kerja terlatih dengan kemampuan bahasa asing dan etos kerja tinggi, LPK Humaira adalah mitra yang tepat.</p><p>Kami dapat merancang kurikulum pelatihan khusus (tailor-made training) sesuai spesifikasi yang dibutuhkan oleh perusahaan mitra kami.</p>'
+        title: 'Kemitraan Industri',
+        content: '<p>Bagi perusahaan di Indonesia maupun Jepang yang membutuhkan pasokan tenaga kerja terlatih dengan kemampuan bahasa asing dan etos kerja tinggi, LPK Humaira adalah mitra terpercaya yang siap menyelenggarakan kurikulum khusus sesuai spesifikasi perusahaan.</p>'
       }
     ]
   },
+
   '/kelas-intensif': {
-    title: 'Pendaftaran Kelas Intensif',
-    metaDescription: 'Program Utama Kelas Intensif LPK Humaira',
-    heroTitle: 'Kelas Intensif Penuh Waktu',
-    heroSubtitle: 'Fokus Maksimal Menuju Keberangkatan',
+    title: 'Kelas Intensif Bahasa Jepang',
+    metaDescription: 'Pendaftaran Kelas Intensif Bahasa Jepang LPK Humaira',
+    heroTitle: 'Kelas Intensif Persiapan Kerja',
+    heroSubtitle: 'Garansi Bimbingan Bahasa & Keterampilan Sampai Terbang',
     sections: [
       {
-        title: 'Program Unggulan',
-        content: '<p>Kelas Intensif Penuh Waktu adalah program utama (flagship) dari LPK Humaira Institute yang memadukan pelatihan bahasa tingkat lanjut, pembentukan karakter, kedisiplinan (FMD), dan pelatihan fisik.</p><p>Peserta akan digembleng layaknya calon tenaga profesional sejati yang siap menghadapi kerasnya dunia kerja internasional dalam waktu yang terukur dan terencana.</p>'
+        title: 'Mulai Belajar di Angkatan Terbaru',
+        content: '<p>Pendaftaran Angkatan Terbaru telah dibuka! Pembelajaran tatap muka di asrama dengan fasilitas ruang kelas modern, ruang simulasi kerja, serta bimbingan intensif dari Sensei berpengalaman.</p>'
       }
     ]
   }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
-import { navigationItems } from '../config/navigationData';
+import { navigationItems } from '../../config/navigationData';
 
 export default function MobileMenu({ isOpen, onClose }) {
   const [expandedItems, setExpandedItems] = useState({});
