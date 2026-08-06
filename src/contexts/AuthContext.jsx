@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword, 
@@ -28,6 +28,7 @@ export const AuthProvider = ({ children }) => {
   const [userProfile, setUserProfile] = useState(null);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
+  const isRegistering = useRef(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -49,11 +50,13 @@ export const AuthProvider = ({ children }) => {
               setUserProfile({ id: docSnap.id, ...docSnap.data() });
               setRole('sensei');
             } else {
-              // Orphan account, sign out
-              await signOut(auth);
-              setCurrentUser(null);
-              setUserProfile(null);
-              setRole(null);
+              // Skip orphan check if we're in the middle of registering
+              if (!isRegistering.current) {
+                await signOut(auth);
+                setCurrentUser(null);
+                setUserProfile(null);
+                setRole(null);
+              }
             }
           }
           setCurrentUser(user);
@@ -109,8 +112,10 @@ export const AuthProvider = ({ children }) => {
    * @param {Object} data - Registration data
    */
   const register = async (data) => {
-    const { nama, kelas, no_telp, username, password } = data;
+    const { nama, kelas, telepon, username, password } = data;
     const email = `${username}@siswa.lpkhumaira.id`;
+    
+    isRegistering.current = true;
     
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -119,7 +124,7 @@ export const AuthProvider = ({ children }) => {
       const userData = {
         nama,
         kelas,
-        no_telp,
+        no_telp: telepon || '',
         username,
         role: 'siswa',
         createdAt: serverTimestamp()
@@ -127,12 +132,19 @@ export const AuthProvider = ({ children }) => {
       
       await setDoc(doc(db, 'siswa', user.uid), userData);
       
+      // Now that profile is saved, set the state manually
+      setCurrentUser(user);
+      setUserProfile({ id: user.uid, ...userData });
+      setRole('siswa');
+      
       return userData;
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
-        throw new Error('Username sudah digunakan, coba username lain');
+        throw new Error('Username sudah digunakan');
       }
       throw error;
+    } finally {
+      isRegistering.current = false;
     }
   };
 
