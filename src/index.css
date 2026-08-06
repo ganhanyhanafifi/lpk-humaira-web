@@ -15,6 +15,18 @@
   }
 }
 
+/* Disable native browser password reveal icons (Edge/Chrome/Safari) to prevent double icons */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+}
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  position: pointer-events-none;
+}
+
 @layer components {
   .btn-primary {
     @apply bg-primary-700 hover:bg-primary-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
