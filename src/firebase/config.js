@@ -4,7 +4,7 @@ import { getStorage } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyDelNwl-q5tx6VJunEo4zVFuhv3vk8fHg',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyDet7NwT-q5Tx6VJunEo4zVFuhV3vk8fHg',
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'lpk-humaira-web.firebaseapp.com',
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'lpk-humaira-web',
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'lpk-humaira-web.firebasestorage.app',
