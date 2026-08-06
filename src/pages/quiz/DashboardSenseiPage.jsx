@@ -180,6 +180,10 @@ const DashboardSenseiPage = () => {
       formData.append('file', submitForm.file);
       formData.append('upload_preset', uploadPreset);
       formData.append('resource_type', 'auto');
+      formData.append('folder', 'soal-quiz');
+      const dateStr = new Date().toISOString().slice(0, 10);
+      const cleanJudul = submitForm.judul.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+      formData.append('public_id', `${cleanJudul}_${submitForm.kelasTarget.replace(/\s/g, '-')}_${dateStr}`);
 
       const cloudRes = await fetch(
         `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
