@@ -2,8 +2,7 @@
   DAFTAR SELURUH NAVIGATOR & STRUKTUR MENU WEBSITE LPK HUMAIRA INSTITUTE
 ====================================================================
 
-Website URL Local: http://localhost:3000/
-Status Semua Link: 100% AKTIF, DAPAT DIAKSES, & TIDAK ADA LINK ERRROR/BLANK.
+
 
 --------------------------------------------------------------------
 1. MENU PROFILE ( /profile )

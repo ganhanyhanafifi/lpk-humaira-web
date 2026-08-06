@@ -20,7 +20,7 @@ export default function Navbar() {
                 <img 
                   src="/logo.png" 
                   alt="LPK Humaira Logo" 
-                  className="w-10 h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform" 
+                  className="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm group-hover:scale-105 transition-transform" 
                 />
                 <span className="font-heading font-bold text-xl tracking-tight text-dark">
                   LPK Humaira <span className="text-primary-700">Institute</span>

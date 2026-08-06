@@ -28,10 +28,21 @@ export default function MobileMenu({ isOpen, onClose }) {
           ) : (
             <Link 
               to={item.href || '#'} 
-              className={`block py-3 px-4 border-b border-gray-100 text-gray-800 font-medium text-lg ${level > 0 ? 'pl-' + (4 + level * 4) : ''}`}
+              className={`block py-3 px-4 border-b border-gray-100 font-medium text-lg ${level > 0 ? 'pl-' + (4 + level * 4) : ''} ${
+                item.accentColor 
+                  ? 'text-amber-700 bg-amber-50' 
+                  : 'text-gray-800'
+              }`}
               onClick={onClose}
             >
-              {item.label}
+              <span className="flex items-center gap-2">
+                {item.label}
+                {item.badge && (
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-white leading-none">
+                    {item.badge}
+                  </span>
+                )}
+              </span>
             </Link>
           )}
           {hasChildren && (

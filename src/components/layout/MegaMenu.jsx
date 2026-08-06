@@ -10,9 +10,20 @@ export default function MegaMenu({ items }) {
           <div key={index} className="relative group/sub">
             <Link 
               to={item.href || '#'} 
-              className="flex items-center justify-between px-4 py-2.5 text-sm text-gray-700 rounded-lg hover:bg-primary-50 hover:text-primary-700 hover:border-l-4 hover:border-primary-700 transition-all"
+              className={`flex items-center justify-between px-4 py-2.5 text-sm rounded-lg transition-all ${
+                item.accentColor 
+                  ? 'text-amber-700 font-semibold bg-amber-50 hover:bg-amber-100 hover:border-l-4 hover:border-amber-500' 
+                  : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700 hover:border-l-4 hover:border-primary-700'
+              }`}
             >
-              <span>{item.label}</span>
+              <span className="flex items-center gap-2">
+                {item.label}
+                {item.badge && (
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-white leading-none">
+                    {item.badge}
+                  </span>
+                )}
+              </span>
               {item.children && <ChevronRightIcon className="w-4 h-4 ml-2" />}
             </Link>
             {item.children && (

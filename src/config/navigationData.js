@@ -87,6 +87,7 @@ export const navigationItems = [
       { label: 'NatTest', href: '/ujian/nattest' },
       { label: 'JTest', href: '/ujian/jtest' },
       { label: 'SSW', href: '/ujian/ssw' },
+      { label: 'Quiz Online', href: '/quiz', badge: 'NEW', accentColor: true },
     ],
   },
   {

@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Column 1: Brand & Social Links */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logo.png" alt="LPK Humaira Logo" className="w-10 h-10 object-contain bg-white rounded-lg p-1" />
+              <img src="/logo.png" alt="LPK Humaira Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-white rounded-xl p-1 shadow-md" />
               <span className="font-heading font-bold text-2xl text-white">LPK Humaira Institute</span>
             </div>
             <p className="mb-6 leading-relaxed text-sm">
