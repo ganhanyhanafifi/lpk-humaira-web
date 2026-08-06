@@ -172,31 +172,37 @@ const DashboardSenseiPage = () => {
     setSubmitMessage({ text: '', type: '' });
 
     try {
+      // 1. Upload file to Cloudinary
+      const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'bvpemcqm';
+      const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'preset_hai';
+
       const formData = new FormData();
       formData.append('file', submitForm.file);
-      formData.append('judul', submitForm.judul);
-      formData.append('kelasTarget', submitForm.kelasTarget);
-      formData.append('namaSensei', userProfile?.nama || 'Sensei');
+      formData.append('upload_preset', uploadPreset);
+      formData.append('resource_type', 'auto');
 
-      // POST to API
-      const response = await fetch('/api/upload-soal-drive', {
-        method: 'POST',
-        body: formData,
-      });
+      const cloudRes = await fetch(
+        `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
 
-      if (!response.ok) {
-        throw new Error('Gagal mengupload file ke server');
+      if (!cloudRes.ok) {
+        throw new Error('Gagal mengunggah file ke cloud storage.');
       }
 
-      const responseData = await response.json();
+      const cloudData = await cloudRes.json();
+      const fileUrl = cloudData.secure_url || cloudData.url;
       
-      // Save record to firestore
+      // 2. Save record to firestore
       await submitSoalRecord({
         judul: submitForm.judul,
         kelasTarget: submitForm.kelasTarget,
         namaSensei: userProfile?.nama || 'Sensei',
         senseiId: currentUser.uid,
-        driveFileUrl: responseData.url || '',
+        driveFileUrl: fileUrl,
         namaFile: submitForm.file.name,
         status: 'menunggu_review'
       });
