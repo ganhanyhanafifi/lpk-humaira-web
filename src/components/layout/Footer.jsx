@@ -27,10 +27,10 @@ export default function Footer() {
                 href="https://www.instagram.com/lpk_humairainstitute/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all border border-white/10 bg-white/5"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 border border-white/20 hover:bg-primary-700 hover:border-primary-500 hover:scale-110 transition-all duration-300 p-2 shadow-sm"
                 title="Instagram LPK Humaira Institute"
               >
-                <img src="/icon-ig.png" alt="Instagram" className="w-full h-full object-cover" />
+                <img src="/icon-ig.png" alt="Instagram" className="w-6 h-6 object-contain rounded-full" />
               </a>
 
               {/* Facebook */}
@@ -38,10 +38,10 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61565595830524" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all border border-white/10 bg-white/5"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 border border-white/20 hover:bg-primary-700 hover:border-primary-500 hover:scale-110 transition-all duration-300 p-2 shadow-sm"
                 title="Facebook LPK Humaira Institute"
               >
-                <img src="/icon-fb.png" alt="Facebook" className="w-full h-full object-cover" />
+                <img src="/icon-fb.png" alt="Facebook" className="w-6 h-6 object-contain rounded-full" />
               </a>
 
               {/* TikTok */}
@@ -49,10 +49,10 @@ export default function Footer() {
                 href="https://www.tiktok.com/@humairainstitute?is_from_webapp=1&sender_device=pc" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30 transition-all border border-white/10 bg-white/5"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 border border-white/20 hover:bg-primary-700 hover:border-primary-500 hover:scale-110 transition-all duration-300 p-2 shadow-sm"
                 title="TikTok LPK Humaira Institute"
               >
-                <img src="/icon-tiktok.png" alt="TikTok" className="w-full h-full object-cover" />
+                <img src="/icon-tiktok.png" alt="TikTok" className="w-6 h-6 object-contain rounded-full" />
               </a>
             </div>
           </div>
