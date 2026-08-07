@@ -41,10 +41,10 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Kolom Kiri: Headline, Subheading, CTAs, Pill Tags */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 flex flex-col justify-center">
             
             {/* Small Top Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-100 rounded-full px-4 py-1.5">
+            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-100 rounded-full px-4 py-1.5 w-fit mb-6">
               <span className="w-2 h-2 rounded-full bg-primary-700 animate-pulse"></span>
               <span className="text-xs md:text-sm font-semibold text-primary-800 uppercase tracking-wider">
                 Lembaga Pelatihan Kerja Resmi Kemenaker
@@ -52,69 +52,70 @@ export default function HeroSection() {
             </div>
 
             {/* Headline Besar (Mixed Color: Hitam & Merah) */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-[1.15] tracking-tight">
-              Wujudkan <span className="text-primary-700 relative inline-block">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-[1.25] tracking-tight mb-6">
+              Wujudkan <span className="text-primary-700 relative inline-block pb-1">
                 Karir di Jepang
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary-200 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <svg className="absolute -bottom-1 left-0 w-full h-3 text-primary-200 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
                   <path d="M0,15 Q50,5 100,15" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round" />
                 </svg>
               </span> bersama LPK Humaira
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-body">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-body mb-8">
               Pelatihan bahasa & persiapan keterampilan kerja profesional dari dasar hingga siap berangkat ke Jepang. Garansi bimbingan sampai lulus.
             </p>
 
             {/* 2 CTA Buttons (Highlight Red Pill + Black Outline Video) */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
               
               {/* Highlight Button: KLIK UNTUK DAFTAR SEKARANG! */}
               <Link 
                 to="/pendaftaran" 
-                className="group relative flex items-center justify-center bg-primary-700 hover:bg-primary-800 text-white font-extrabold px-9 py-4.5 rounded-full text-base md:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary-700/50 hover:scale-105 active:scale-100 ring-4 ring-primary-700/20"
+                className="group relative flex items-center justify-center bg-primary-700 hover:bg-primary-800 text-white font-extrabold px-8 h-14 rounded-full text-base md:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary-700/50 hover:scale-105 active:scale-100 ring-4 ring-primary-700/20"
               >
                 <span>KLIK UNTUK DAFTAR SEKARANG!</span>
               </Link>
 
               <Link 
                 to="/program" 
-                className="flex items-center justify-center gap-2.5 border-2 border-dark text-dark hover:bg-dark hover:text-white font-semibold px-7 py-4.5 rounded-full text-base md:text-lg transition-all duration-300"
+                className="flex items-center justify-center gap-2.5 border-2 border-dark text-dark hover:bg-dark hover:text-white font-semibold px-7 h-14 rounded-full text-base md:text-lg transition-all duration-300"
               >
-                <div className="w-7 h-7 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center group-hover:bg-white">
+                <div className="w-7 h-7 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center group-hover:bg-white shrink-0">
                   <PlayIcon className="w-4 h-4 ml-0.5" />
                 </div>
-                Lihat Program
+                <span>Lihat Program</span>
               </Link>
 
             </div>
 
             {/* Baris Tag Pill Kecil (2 Baris Outline Pills) */}
-            <div className="space-y-3 pt-4 border-t border-gray-100">
-              <p className="text-xs font-bold uppercase tracking-wider text-gray-400">Program Unggulan:</p>
+            <div className="pt-6 border-t border-gray-100">
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Program Unggulan:</p>
               
-              {/* Row 1 */}
-              <div className="flex flex-wrap gap-2">
-                {tagsRow1.map((tag, idx) => (
-                  <span 
-                    key={idx}
-                    className="inline-flex items-center text-xs md:text-sm font-semibold px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm hover:border-primary-300 hover:text-primary-700 transition-colors"
-                  >
-                    {tag.label}
-                  </span>
-                ))}
-              </div>
+              {/* Row 1 & Row 2 Combined Container for consistent gap */}
+              <div className="flex flex-col gap-2.5">
+                <div className="flex flex-wrap gap-2">
+                  {tagsRow1.map((tag, idx) => (
+                    <span 
+                      key={idx}
+                      className="inline-flex items-center text-xs md:text-sm font-semibold px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm hover:border-primary-300 hover:text-primary-700 transition-colors"
+                    >
+                      {tag.label}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Row 2 */}
-              <div className="flex flex-wrap gap-2">
-                {tagsRow2.map((tag, idx) => (
-                  <span 
-                    key={idx}
-                    className="inline-flex items-center text-xs md:text-sm font-semibold px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm hover:border-primary-300 hover:text-primary-700 transition-colors"
-                  >
-                    {tag.label}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2">
+                  {tagsRow2.map((tag, idx) => (
+                    <span 
+                      key={idx}
+                      className="inline-flex items-center text-xs md:text-sm font-semibold px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm hover:border-primary-300 hover:text-primary-700 transition-colors"
+                    >
+                      {tag.label}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
