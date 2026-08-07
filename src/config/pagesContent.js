@@ -154,6 +154,48 @@ export const pagesContent = {
       }
     ]
   },
+  '/profile/izin-so': {
+    title: 'Izin S.O (Sending Organization)',
+    metaDescription: 'Informasi Izin Sending Organization LPK Humaira Institute',
+    heroTitle: 'Legalitas & Izin Resmi S.O',
+    heroSubtitle: 'Terdaftar Resmi Sebagai Sending Organization (S.O) di Kemenaker RI',
+    sections: [
+      {
+        title: 'Status Izin Sending Organization (S.O)',
+        content: '<p>LPK Humaira Institute merupakan Lembaga Pelatihan Kerja (LPK) sekaligus <strong>Sending Organization (S.O)</strong> yang terdaftar dan mengantongi izin resmi dari Kementerian Ketenagakerjaan Republik Indonesia.</p><p>Dengan status legalitas ini, LPK Humaira memiliki wewenang resmi untuk melatih, memproses, dan memberangkatkan calon tenaga kerja/magang Indonesia ke berbagai perusahaan mitra penerima di Jepang secara aman, terpercaya, dan dilindungi hukum.</p>'
+      },
+      {
+        title: 'Detail Perizinan Resmi',
+        content: '<div className="bg-gray-50 p-4 rounded-xl border border-gray-200"><p className="mb-2"><strong>Nomor Izin S.O:</strong> <span className="text-primary-700 font-semibold">[ISI DATA ASLI NOMOR IZIN DI SINI]</span></p><p className="mb-2"><strong>Instansi Penerbit:</strong> <span className="text-primary-700 font-semibold">[ISI DATA ASLI INSTANSI PENERBIT DI SINI - contoh: Kementerian Ketenagakerjaan RI]</span></p><p className="mb-2"><strong>Tanggal Penerbitan:</strong> <span className="text-primary-700 font-semibold">[ISI TANGGAL PENERBITAN DI SINI]</span></p><p><strong>Status Masa Berlaku:</strong> <span className="text-green-600 font-semibold">[ISI MASA BERLAKU DI SINI - Contoh: Aktif / Resmi]</span></p></div>'
+      }
+    ]
+  },
+  '/profile/alamat-kantor': {
+    title: 'Alamat Kantor',
+    metaDescription: 'Alamat Kantor Pusat dan Kontak Resmi LPK Humaira Institute',
+    heroTitle: 'Alamat Kantor & Kontak Resmi',
+    heroSubtitle: 'Kunjungi Kantor Pusat Kami atau Hubungi Kami untuk Konsultasi Karir',
+    type: 'contact_page',
+    sections: [
+      {
+        title: 'Informasi Lokasi & Kontak',
+        content: '<p>Kantor pusat LPK Humaira Institute siap melayani konsultasi pendaftaran, informasi program pelatihan bahasa Jepang, dan proses keberangkatan magang/SSW.</p>'
+      }
+    ]
+  },
+  '/profile/our-team': {
+    title: 'Our Team',
+    metaDescription: 'Tim Manajemen dan Instruktur Berpengalaman LPK Humaira Institute',
+    heroTitle: 'Tim & Instruktur LPK Humaira',
+    heroSubtitle: 'Didukung oleh jajaran pimpinan, staf, dan instruktur profesional berpengalaman',
+    type: 'team_page',
+    sections: [
+      {
+        title: 'Jajaran Manajemen & Pengajar',
+        content: '<p>Tim LPK Humaira Institute terdiri dari jajaran manajemen yang profesional serta instruktur bahasa Jepang berdedikasi tinggi yang berpengalaman di bidangnya.</p>'
+      }
+    ]
+  },
   '/profile/company/izin-so': {
     title: 'Izin S.O (Sending Organization)',
     metaDescription: 'Informasi Izin Sending Organization LPK Humaira',

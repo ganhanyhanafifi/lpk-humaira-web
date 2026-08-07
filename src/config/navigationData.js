@@ -3,16 +3,10 @@ export const navigationItems = [
     label: 'Profile',
     href: '/profile',
     children: [
-      { 
-        label: 'Company Profile', 
-        href: '/profile/company',
-        children: [
-          { label: 'Izin S.O', href: '/profile/company/izin-so' },
-          { label: 'Our Team', href: '/profile/company/our-team' },
-          { label: 'Lokasi Pendidikan & Pelatihan', href: '/profile/company/lokasi' },
-          { label: 'Alamat Kantor Pusat', href: '/profile/company/alamat' },
-        ]
-      },
+      { label: 'Company Profile', href: '/profile/company' },
+      { label: 'Izin S.O', href: '/profile/izin-so' },
+      { label: 'Alamat Kantor', href: '/profile/alamat-kantor' },
+      { label: 'Our Team', href: '/profile/our-team' },
     ],
   },
   {
