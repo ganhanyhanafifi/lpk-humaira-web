@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "section": "Kosakata - Cara Baca Kanji",
+    "question": "くつに 石が 入って いました。",
+    "options": ["いし", "すな", "くさ", "えだ"],
+    "answerIndex": 0
+  },
+  {
+    "id": 2,
+    "section": "Kosakata - Cara Baca Kanji",
+    "question": "にほんで いろいろな 経験を しました。",
+    "options": ["けいけん", "けいげん", "けけん", "けげん"],
+    "answerIndex": 0
+  },
+  {
+    "id": 3,
+    "section": "Kosakata - Cara Baca Kanji",
+    "question": "きょうは 食堂が こんで いました。",
+    "options": ["しゅくど", "しょくどう", "しょくど", "しゅくどう"],
+    "answerIndex": 1
+  },
+  {
+    "id": 4,
+    "section": "Kosakata - Cara Baca Kanji",
+    "question": "この まどから 港が 見えます。",
+    "options": ["うみ", "みなと", "みずうみ", "いけ"],
+    "answerIndex": 1
+  },
+  {
+    "id": 5,
+    "section": "Kosakata - Cara Baca Kanji",
+    "question": "まいばん 日記を 書いて います。",
+    "options": ["にっき", "にちき", "にっきい", "にちきい"],
+    "answerIndex": 0
+  },
+  {
+    "id": 6,
+    "section": "Kosakata - Isi Kurung",
+    "question": "けさ せんたくした ふくが まだ（　）いません。",
+    "options": ["ひえて", "なおって", "ぬれて", "かわいて"],
+    "answerIndex": 3
+  },
+  {
+    "id": 7,
+    "section": "Kosakata - Isi Kurung",
+    "question": "スミスさんは いつも（　）べんきょうして います。",
+    "options": ["だいじに", "たいせつに", "ねっしんに", "まっすぐに"],
+    "answerIndex": 2
+  },
+  {
+    "id": 8,
+    "section": "Kosakata - Isi Kurung",
+    "question": "わたしは にほんの まんがに（　）が あります。",
+    "options": ["きぶん", "きょうみ", "こころ", "しゅみ"],
+    "answerIndex": 1
+  },
+  {
+    "id": 9,
+    "section": "Kosakata - Isi Kurung",
+    "question": "りょこうの にもつは もう（　）できましたか。",
+    "options": ["やくそく", "りよう", "せわ", "ようい"],
+    "answerIndex": 3
+  },
+  {
+    "id": 10,
+    "section": "Kosakata - Isi Kurung",
+    "question": "この にもつを あそこに（　）ください。",
+    "options": ["はこんで", "つたえて", "ひろって", "むかえて"],
+    "answerIndex": 0
+  },
+  {
+    "id": 11,
+    "section": "Kosakata - Makna Sama",
+    "question": "バスが しゅっぱつしました。",
+    "options": [
+      "バスが とまりました。",
+      "バスが つきました。",
+      "バスが でました。",
+      "バスが まがりました。"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": 12,
+    "section": "Kosakata - Makna Sama",
+    "question": "あには えが うまいです。",
+    "options": [
+      "あには えが じょうずです。",
+      "あには えが きらいです。",
+      "あには えが へたです。",
+      "あには えが すきです。"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": 13,
+    "section": "Tata Bahasa",
+    "question": "わたしの 父は 中国語も 英語（　）話せます。",
+    "options": ["を", "で", "も", "が"],
+    "answerIndex": 2
+  },
+  {
+    "id": 14,
+    "section": "Tata Bahasa",
+    "question": "これは わたしが 米（　）作った パンです。",
+    "options": ["に", "の", "や", "で"],
+    "answerIndex": 3
+  },
+  {
+    "id": 15,
+    "section": "Tata Bahasa",
+    "question": "A「誕生日に 田中さんから 何を もらったんですか。」B「田中さん（　）腕時計を もらいました。」",
+    "options": ["からが", "からに", "からで", "からは"],
+    "answerIndex": 3
+  },
+  {
+    "id": 16,
+    "section": "Tata Bahasa",
+    "question": "学生「先生、この 言葉は（　）意味ですか。」先生「『やさしい』と いう 意味です。」",
+    "options": ["どうやって", "どのぐらい", "どういう", "どう"],
+    "answerIndex": 2
+  },
+  {
+    "id": 17,
+    "section": "Tata Bahasa",
+    "question": "A「あした いっしょに ドライブに 行きませんか。」B「（　）、ごめんなさい、あしたは アルバイトが あるんです。」",
+    "options": ["行きたいから", "行きたいけれど", "行きたいし", "行きたくて"],
+    "answerIndex": 1
+  },
+  {
+    "id": 18,
+    "section": "Tata Bahasa",
+    "question": "A「誕生日 おめでとうございます。これ、プレゼントです。どうぞ。」B「ありがとうございます。大切に（　）。」",
+    "options": ["します", "います", "なります", "あります"],
+    "answerIndex": 0
+  },
+  {
+    "id": 19,
+    "section": "Membaca (Dokkai)",
+    "question": "アリさんの机の上に、このメモと本が置いてあります。「アリさん　アリさんから借りた本を置いておきます。ありがとうございました。アリさんが借りたいと言っていた本も、一緒に置きます。重いので、今日は2冊しか持ってきませんでした。来週、ほかの3冊を持ってきます。　石川」 質問：石川さんは、来週、何をすると言っていますか。",
+    "options": [
+      "アリさんに本を2冊返します。",
+      "アリさんに本を3冊返します。",
+      "アリさんに本を2冊貸します。",
+      "アリさんに本を3冊貸します。"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": 20,
+    "section": "Membaca (Dokkai)",
+    "question": "公園の入り口に、このお知らせがあります。「公園で遊ぶときの注意　◆公園が開いている時間は、午前6時から午後9時です。これ以外の時間は入れません。　◆自転車やオートバイは、公園の入り口にとめてください。中に入れてはいけません。　◆公園の中で、次のことをしてはいけません：ボールを使って遊ぶこと／たばこを吸うこと」 質問：このお知らせから、公園についてわかることは何ですか。",
+    "options": [
+      "午後10時に公園に入ってもいいです。",
+      "入り口にオートバイをとめてはいけません。",
+      "サッカーの練習をしてはいけません。",
+      "たばこを吸ってもいいです。"
+    ],
+    "answerIndex": 2
+  }
+]

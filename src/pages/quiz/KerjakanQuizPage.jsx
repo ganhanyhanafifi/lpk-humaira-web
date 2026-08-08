@@ -8,6 +8,7 @@ import {
   getQuizSoal, 
   submitHasilQuiz 
 } from '../../firebase/quizService';
+import { shikenJLPTN4Questions } from '../../shiken/shikenService';
 
 export default function KerjakanQuizPage() {
   const { quizId } = useParams();
@@ -39,18 +40,36 @@ export default function KerjakanQuizPage() {
         }
 
         const quizData = await getQuizById(quizId);
-        const soalData = await getQuizSoal(quizId);
+        let soalData = await getQuizSoal(quizId);
         
-        if (!quizData) {
-          navigate('/quiz/dashboard-siswa', { state: { message: 'Quiz tidak ditemukan' } });
-          return;
+        // Fallback jika Firestore belum di-seed atau kuis baru
+        if (!soalData || soalData.length === 0) {
+          soalData = shikenJLPTN4Questions;
         }
 
-        setQuiz(quizData);
+        const defaultQuiz = quizData || {
+          id: quizId,
+          judul: 'Ujian Bahasa Jepang (JLPT N4)',
+          deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
+          durasiMenit: 30,
+          kelasTarget: 'Semua Kelas'
+        };
+
+        setQuiz(defaultQuiz);
         setSoal(soalData);
-        setTimeLeft(quizData.durasiMenit * 60);
+        setTimeLeft(defaultQuiz.durasiMenit * 60);
       } catch (error) {
         console.error('Error fetching quiz:', error);
+        // Fallback to local shikenJLPTN4Questions on network error
+        setQuiz({
+          id: quizId,
+          judul: 'Ujian Bahasa Jepang (JLPT N4)',
+          deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
+          durasiMenit: 30,
+          kelasTarget: 'Semua Kelas'
+        });
+        setSoal(shikenJLPTN4Questions);
+        setTimeLeft(30 * 60);
       } finally {
         setLoading(false);
       }
@@ -83,9 +102,12 @@ export default function KerjakanQuizPage() {
       let jumlahBenar = 0;
       const jawabanDetail = [];
 
+      const optionKeys = ['A', 'B', 'C', 'D'];
+
       soal.forEach((s) => {
         const jawabanDipilih = answers[s.id] || null;
-        const benar = jawabanDipilih === s.jawaban_benar;
+        const correctKey = s.jawaban_benar || optionKeys[s.answerIndex] || 'A';
+        const benar = jawabanDipilih === correctKey;
         
         if (jawabanDipilih) jumlahDijawab++;
         if (benar) jumlahBenar++;
@@ -251,23 +273,29 @@ export default function KerjakanQuizPage() {
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
               Soal {currentIndex + 1} dari {soal.length}
             </h2>
+            {currentSoal?.section && (
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700 border border-red-100">
+                {currentSoal.section}
+              </span>
+            )}
           </div>
 
           <div className="prose max-w-none mb-8">
-            <p className="text-lg md:text-xl text-gray-900 font-inter leading-relaxed">
-              {currentSoal?.teks_soal}
+            <p className="text-lg md:text-xl text-gray-900 font-japanese leading-relaxed whitespace-pre-line">
+              {currentSoal?.teks_soal || currentSoal?.question}
             </p>
           </div>
 
           <div className="space-y-3">
-            {['A', 'B', 'C', 'D'].map((opsi) => {
+            {['A', 'B', 'C', 'D'].map((opsi, idx) => {
               const isSelected = answers[currentSoal?.id] === opsi;
               const textKey = `opsi_${opsi.toLowerCase()}`;
-              const text = currentSoal?.[textKey];
+              // Fallback ke array options jika opsi_a/b/c/d undefined
+              const text = currentSoal?.[textKey] || currentSoal?.options?.[idx];
               
               if (!text) return null; // Fallback jika opsi kosong
 
@@ -285,7 +313,7 @@ export default function KerjakanQuizPage() {
                     ${isSelected ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700 group-hover:bg-red-200'}`}>
                     {opsi}
                   </span>
-                  <span className="font-inter leading-relaxed">{text}</span>
+                  <span className="font-japanese text-base md:text-lg leading-relaxed">{text}</span>
                 </button>
               );
             })}
