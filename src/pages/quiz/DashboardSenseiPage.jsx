@@ -114,6 +114,32 @@ const DashboardSenseiPage = () => {
     }
   };
 
+  const formatDate = (timestamp) => {
+    if (!timestamp) return '-';
+    let date;
+    if (timestamp?.toDate) {
+      date = timestamp.toDate();
+    } else if (timestamp?.seconds) {
+      date = new Date(timestamp.seconds * 1000);
+    } else {
+      date = new Date(timestamp);
+    }
+    if (isNaN(date.getTime())) return '-';
+    return date.toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
+  const getNilaiColor = (score) => {
+    if (score >= 80) return 'font-bold text-green-600';
+    if (score >= 60) return 'font-bold text-amber-600';
+    return 'font-bold text-red-600';
+  };
+
   // =====================
   // FILTERING logic
   // =====================
@@ -123,11 +149,13 @@ const DashboardSenseiPage = () => {
     return matchName && matchKelas;
   });
 
-  const uniqueHasilQuizTitles = [...new Set(hasilList.map(h => h.judulQuiz))];
+  const uniqueHasilQuizTitles = [...new Set(hasilList.map(h => h.quizJudul || h.judulQuiz).filter(Boolean))];
   
   const filteredHasilList = hasilList.filter(h => {
-    const matchKelas = hasilKelasFilter === 'Semua' || h.kelasSiswa === hasilKelasFilter;
-    const matchQuiz = hasilQuizFilter === 'Semua' || h.judulQuiz === hasilQuizFilter;
+    const kelasVal = h.kelas || h.kelasSiswa;
+    const quizVal = h.quizJudul || h.judulQuiz;
+    const matchKelas = hasilKelasFilter === 'Semua' || kelasVal === hasilKelasFilter || (hasilKelasFilter === 'Kelas 1' && (kelasVal === '1' || kelasVal === 'Kelas 1'));
+    const matchQuiz = hasilQuizFilter === 'Semua' || quizVal === hasilQuizFilter;
     return matchKelas && matchQuiz;
   });
 
@@ -136,14 +164,14 @@ const DashboardSenseiPage = () => {
   // =====================
   const handleExportCSV = () => {
     const dataToExport = filteredHasilList.map(h => ({
-      Nama: h.namaSiswa || '-',
-      Kelas: h.kelasSiswa || '-',
-      'Judul Quiz': h.judulQuiz || '-',
+      Nama: h.siswaNama || h.namaSiswa || '-',
+      Kelas: h.kelas || h.kelasSiswa || '-',
+      'Judul Quiz': h.quizJudul || h.judulQuiz || '-',
       Nilai: h.nilai || 0,
-      'Jumlah Benar': h.jawabanBenar || 0,
+      'Jumlah Benar': h.jumlahBenar ?? h.jawabanBenar ?? 0,
       'Jumlah Soal': h.totalSoal || 0,
-      'Waktu Pengerjaan (detik)': h.waktuPengerjaanDetik || 0,
-      'Tanggal Pengerjaan': h.timestamp ? h.timestamp.toDate().toLocaleString('id-ID') : '-',
+      'Waktu Pengerjaan (detik)': h.durasiPengerjaanDetik ?? h.waktuPengerjaanDetik ?? 0,
+      'Tanggal Pengerjaan': formatDate(h.createdAt || h.waktuSelesai || h.timestamp),
       Status: h.status || '-'
     }));
 
@@ -248,21 +276,6 @@ const DashboardSenseiPage = () => {
   // =====================
   // RENDER HELPERS
   // =====================
-  const formatDate = (timestamp) => {
-    if (!timestamp) return '-';
-    if (timestamp.toDate) {
-      return timestamp.toDate().toLocaleDateString('id-ID', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      });
-    }
-    return new Date(timestamp).toLocaleDateString('id-ID');
-  };
-
-  const getNilaiColor = (nilai) => {
-    if (nilai >= 80) return 'text-green-600 font-bold';
-    if (nilai >= 60) return 'text-amber-500 font-bold';
-    return 'text-red-600 font-bold';
-  };
 
   return (
     <div className="min-h-screen bg-neutral-50 font-inter">
@@ -473,19 +486,19 @@ const DashboardSenseiPage = () => {
                       {filteredHasilList.length > 0 ? (
                         filteredHasilList.map((h, idx) => (
                           <tr key={h.id || idx} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                            <td className="p-3 font-medium text-gray-800">{h.namaSiswa || '-'}</td>
-                            <td className="p-3 text-gray-600 text-sm">{h.kelasSiswa || '-'}</td>
-                            <td className="p-3 text-gray-700">{h.judulQuiz || '-'}</td>
-                            <td className={`p-3 text-lg ${getNilaiColor(h.nilai)}`}>{h.nilai || 0}</td>
-                            <td className="p-3 text-gray-600">{h.jawabanBenar || 0} / {h.totalSoal || 0}</td>
-                            <td className="p-3 text-gray-600">{h.waktuPengerjaanDetik || 0}s</td>
-                            <td className="p-3 text-gray-600 text-sm">{formatDate(h.timestamp)}</td>
+                            <td className="p-3 font-medium text-gray-800">{h.siswaNama || h.namaSiswa || '-'}</td>
+                            <td className="p-3 text-gray-600 text-sm">{h.kelas || h.kelasSiswa || '-'}</td>
+                            <td className="p-3 text-gray-700">{h.quizJudul || h.judulQuiz || '-'}</td>
+                            <td className={`p-3 text-lg ${getNilaiColor(h.nilai || 0)}`}>{h.nilai || 0}</td>
+                            <td className="p-3 text-gray-600">{(h.jumlahBenar ?? h.jawabanBenar ?? 0)} / {h.totalSoal || 0}</td>
+                            <td className="p-3 text-gray-600">{(h.durasiPengerjaanDetik ?? h.waktuPengerjaanDetik ?? 0)}s</td>
+                            <td className="p-3 text-gray-600 text-sm">{formatDate(h.createdAt || h.waktuSelesai || h.timestamp)}</td>
                             <td className="p-3">
                               <span className={`px-2 py-1 rounded text-xs font-medium ${
                                 h.status === 'lulus' ? 'bg-green-100 text-green-700' : 
                                 h.status === 'tidak_lulus' ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-700'
                               }`}>
-                                {h.status === 'lulus' ? 'Lulus' : h.status === 'tidak_lulus' ? 'Tidak Lulus' : (h.status || '-')}
+                                {h.status === 'lulus' ? 'Lulus' : h.status === 'tidak_lulus' ? 'Tidak Lulus' : h.status === 'auto_submit_waktu_habis' ? 'Waktu Habis' : h.status === 'selesai_manual' ? 'Selesai' : (h.status || '-')}
                               </span>
                             </td>
                           </tr>
