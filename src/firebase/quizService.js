@@ -144,7 +144,7 @@ export const getQuizzesByKelas = async (kelas = 'Semua Kelas') => {
     id: 'jlpt-n4-quiz-1',
     judul: 'Ujian Bahasa Jepang (JLPT N4)',
     deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
-    durasiMenit: 60,
+    durasiMenit: 20,
     kelasTarget: 'Semua Kelas',
     status: 'aktif',
     jumlahSoal: 20,

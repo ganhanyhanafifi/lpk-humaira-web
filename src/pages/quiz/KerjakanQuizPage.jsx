@@ -51,13 +51,13 @@ export default function KerjakanQuizPage() {
           id: quizId,
           judul: 'Ujian Bahasa Jepang (JLPT N4)',
           deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
-          durasiMenit: 60,
+          durasiMenit: 20,
           kelasTarget: 'Semua Kelas'
         };
 
         setQuiz(defaultQuiz);
         setSoal(soalData);
-        setTimeLeft((defaultQuiz.durasiMenit || 60) * 60);
+        setTimeLeft((defaultQuiz.durasiMenit || 20) * 60);
       } catch (error) {
         console.error('Error fetching quiz:', error);
         // Fallback to local shikenJLPTN4Questions on network error
@@ -65,11 +65,11 @@ export default function KerjakanQuizPage() {
           id: quizId,
           judul: 'Ujian Bahasa Jepang (JLPT N4)',
           deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
-          durasiMenit: 60,
+          durasiMenit: 20,
           kelasTarget: 'Semua Kelas'
         });
         setSoal(shikenJLPTN4Questions);
-        setTimeLeft(60 * 60);
+        setTimeLeft(20 * 60);
       } finally {
         setLoading(false);
       }
