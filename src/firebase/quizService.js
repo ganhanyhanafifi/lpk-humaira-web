@@ -215,10 +215,29 @@ export const submitHasilQuiz = async (hasilData) => {
       ...hasilData,
       createdAt: serverTimestamp(),
     });
-    return docRef;
+    const resultId = docRef.id;
+    // Simpan ke localStorage sebagai cache/fallback lokal
+    try {
+      const localResults = JSON.parse(localStorage.getItem('lpk_hasil_quiz') || '[]');
+      localResults.unshift({ id: resultId, ...hasilData, createdAt: new Date().toISOString() });
+      localStorage.setItem('lpk_hasil_quiz', JSON.stringify(localResults));
+    } catch (e) {
+      console.warn('Could not save to localStorage:', e);
+    }
+    return resultId;
   } catch (error) {
     console.error('Error in submitHasilQuiz:', error);
-    throw new Error('Gagal menyimpan hasil kuis');
+    // Fallback ID jika offline / firestore error
+    const fallbackId = `hasil_local_${Date.now()}`;
+    const fallbackObj = { id: fallbackId, ...hasilData, createdAt: new Date().toISOString() };
+    try {
+      const localResults = JSON.parse(localStorage.getItem('lpk_hasil_quiz') || '[]');
+      localResults.unshift(fallbackObj);
+      localStorage.setItem('lpk_hasil_quiz', JSON.stringify(localResults));
+    } catch (e) {
+      console.warn('Could not save fallback to localStorage:', e);
+    }
+    return fallbackId;
   }
 };
 
@@ -228,25 +247,45 @@ export const submitHasilQuiz = async (hasilData) => {
  * @returns {Promise<Array>} Array riwayat kuis yang telah dikerjakan siswa
  */
 export const getHasilBySiswa = async (siswaId) => {
+  let firestoreList = [];
   try {
     const q = query(
       collection(db, 'hasil_quiz'),
       where('siswaId', '==', siswaId)
     );
     const querySnapshot = await getDocs(q);
-    const hasilList = [];
     querySnapshot.forEach((doc) => {
-      hasilList.push({ id: doc.id, ...doc.data() });
-    });
-    return hasilList.sort((a, b) => {
-      const dateA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt || 0);
-      const dateB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt || 0);
-      return dateB - dateA;
+      firestoreList.push({ id: doc.id, ...doc.data() });
     });
   } catch (error) {
-    console.error('Error in getHasilBySiswa:', error);
-    return [];
+    console.error('Error fetching Firestore hasil_quiz:', error);
   }
+
+  // Ambil data cache/fallback dari localStorage
+  let localList = [];
+  try {
+    const saved = localStorage.getItem('lpk_hasil_quiz');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      localList = parsed.filter(item => !siswaId || item.siswaId === siswaId);
+    }
+  } catch (e) {
+    console.warn('Error reading localStorage hasil_quiz:', e);
+  }
+
+  // Gabungkan dan hilangkan duplikat berdasarkan ID
+  const map = new Map();
+  [...firestoreList, ...localList].forEach(item => {
+    if (item && item.id) map.set(item.id, item);
+  });
+
+  const combined = Array.from(map.values());
+
+  return combined.sort((a, b) => {
+    const dateA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt || 0);
+    const dateB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt || 0);
+    return dateB - dateA;
+  });
 };
 
 /**

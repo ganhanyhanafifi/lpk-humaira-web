@@ -20,23 +20,41 @@ export default function HasilQuizPage() {
     const fetchHasil = async () => {
       try {
         if (!hasilId) return;
-        const docRef = doc(db, 'hasil_quiz', hasilId);
-        const docSnap = await getDoc(docRef);
-        
-        if (docSnap.exists()) {
-          const data = docSnap.data();
+        let data = null;
+
+        try {
+          const docRef = doc(db, 'hasil_quiz', hasilId);
+          const docSnap = await getDoc(docRef);
+          if (docSnap.exists()) {
+            data = docSnap.data();
+          }
+        } catch (e) {
+          console.warn("Firestore fetch error, fallback to localStorage:", e);
+        }
+
+        // Fallback ke localStorage jika data belum ada di Firestore
+        if (!data) {
+          try {
+            const saved = localStorage.getItem('lpk_hasil_quiz');
+            if (saved) {
+              const list = JSON.parse(saved);
+              data = list.find(item => item.id === hasilId || item.id === String(hasilId)) || list[0];
+            }
+          } catch (e) {
+            console.warn("Error reading local hasil_quiz:", e);
+          }
+        }
+
+        if (data) {
           setHasil(data);
           
           // Trigger Confetti based on score
-          const score = data.nilai;
+          const score = data.nilai || 0;
           if (score >= 80) {
             confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
           } else if (score >= 60) {
             confetti({ particleCount: 50, spread: 50, origin: { y: 0.6 } });
           }
-
-          // Fetch full soal details if we need to show pembahasan (assuming jawabanDetail only has id)
-          // Simplified here to just use jawabanDetail if it has text or fetch again if needed.
         } else {
           navigate('/quiz/dashboard-siswa');
         }
