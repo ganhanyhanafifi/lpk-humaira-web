@@ -26,7 +26,7 @@ const DashboardSiswaPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!currentUser || !userProfile?.kelas) {
+      if (!currentUser) {
         setLoading(false);
         return;
       }
@@ -35,24 +35,49 @@ const DashboardSiswaPage = () => {
       setError(null);
       
       try {
+        const studentKelas = userProfile?.kelas || 'Semua Kelas';
         // Fetch quizzes for student's class and their results
         const [quizzesData, hasilData] = await Promise.all([
-          getQuizzesByKelas(userProfile.kelas),
+          getQuizzesByKelas(studentKelas),
           getHasilBySiswa(currentUser.uid)
         ]);
         
-        setQuizzes(quizzesData);
+        setQuizzes(quizzesData && quizzesData.length > 0 ? quizzesData : [
+          {
+            id: 'jlpt-n4-quiz-1',
+            judul: 'Ujian Bahasa Jepang (JLPT N4)',
+            deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
+            durasiMenit: 60,
+            kelasTarget: 'Semua Kelas',
+            status: 'aktif',
+            jumlahSoal: 20,
+            createdAt: new Date(),
+          }
+        ]);
+
         // Sort hasil descending by date
-        const sortedHasil = hasilData.sort((a, b) => {
-          const dateA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt);
-          const dateB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt);
+        const sortedHasil = (hasilData || []).sort((a, b) => {
+          const dateA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt || 0);
+          const dateB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt || 0);
           return dateB - dateA;
         });
         
         setHasil(sortedHasil);
       } catch (err) {
         console.error('Error fetching dashboard data:', err);
-        setError('Gagal memuat data. Silakan coba lagi nanti.');
+        // Fallback default N4 Quiz
+        setQuizzes([
+          {
+            id: 'jlpt-n4-quiz-1',
+            judul: 'Ujian Bahasa Jepang (JLPT N4)',
+            deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
+            durasiMenit: 60,
+            kelasTarget: 'Semua Kelas',
+            status: 'aktif',
+            jumlahSoal: 20,
+            createdAt: new Date(),
+          }
+        ]);
       } finally {
         setLoading(false);
       }

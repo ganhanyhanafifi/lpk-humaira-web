@@ -139,24 +139,41 @@ export const getQuizById = async (quizId) => {
  * @param {string} kelas - Kelas target (misal: 'Kelas 1')
  * @returns {Promise<Array>} Array kuis aktif untuk kelas tersebut atau 'Semua Kelas'
  */
-export const getQuizzesByKelas = async (kelas) => {
+export const getQuizzesByKelas = async (kelas = 'Semua Kelas') => {
+  const defaultN4Quiz = {
+    id: 'jlpt-n4-quiz-1',
+    judul: 'Ujian Bahasa Jepang (JLPT N4)',
+    deskripsi: '20 Soal Pilihan Ganda JLPT N4 (Kosakata, Tata Bahasa & Dokkai)',
+    durasiMenit: 60,
+    kelasTarget: 'Semua Kelas',
+    status: 'aktif',
+    jumlahSoal: 20,
+    createdAt: new Date(),
+  };
+
   try {
+    const formattedKelas = String(kelas).startsWith('Kelas') ? String(kelas) : `Kelas ${kelas}`;
     const q = query(
       collection(db, 'quiz'),
-      where('status', '==', 'aktif'),
-      where('kelasTarget', 'in', [kelas, 'Semua Kelas'])
+      where('status', '==', 'aktif')
     );
     const querySnapshot = await getDocs(q);
     const quizList = [];
     querySnapshot.forEach((doc) => {
-      quizList.push({ id: doc.id, ...doc.data() });
+      const data = doc.data();
+      if (!data.kelasTarget || data.kelasTarget === 'Semua Kelas' || data.kelasTarget === formattedKelas || data.kelasTarget === String(kelas)) {
+        quizList.push({ id: doc.id, ...data });
+      }
     });
-    // orderBy pada firestore memerlukan indeks komposit bila dikombinasikan dengan 'in'
-    // oleh karena itu, pengurutan dapat dilakukan di sisi klien
-    return quizList.sort((a, b) => b.createdAt?.toMillis() - a.createdAt?.toMillis());
+    
+    if (quizList.length === 0) {
+      return [defaultN4Quiz];
+    }
+
+    return quizList.sort((a, b) => (b.createdAt?.toMillis ? b.createdAt.toMillis() : 0) - (a.createdAt?.toMillis ? a.createdAt.toMillis() : 0));
   } catch (error) {
-    console.error('Error in getQuizzesByKelas:', error);
-    throw new Error('Gagal mengambil data kuis berdasarkan kelas');
+    console.error('Error in getQuizzesByKelas, using default fallback:', error);
+    return [defaultN4Quiz];
   }
 };
 
@@ -214,18 +231,21 @@ export const getHasilBySiswa = async (siswaId) => {
   try {
     const q = query(
       collection(db, 'hasil_quiz'),
-      where('siswaId', '==', siswaId),
-      orderBy('createdAt', 'desc')
+      where('siswaId', '==', siswaId)
     );
     const querySnapshot = await getDocs(q);
     const hasilList = [];
     querySnapshot.forEach((doc) => {
       hasilList.push({ id: doc.id, ...doc.data() });
     });
-    return hasilList;
+    return hasilList.sort((a, b) => {
+      const dateA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt || 0);
+      const dateB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt || 0);
+      return dateB - dateA;
+    });
   } catch (error) {
     console.error('Error in getHasilBySiswa:', error);
-    throw new Error('Gagal mengambil riwayat hasil kuis siswa');
+    return [];
   }
 };
 
